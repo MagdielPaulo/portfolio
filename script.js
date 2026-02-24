@@ -76,10 +76,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       missions_title: "PROJETOS // MISSÕES",
       mission1_title: "Sistema de Portfólio",
-      mission2_title: "Aplicativo CRUD",
-      mission4_title: "E-commerce Bot",
-      mission5_title: "Dashboard Analítico",
-      mission6_title: "App Mobile Híbrido",
+      mission2_title: "???",
+      mission3_title: "???",
+      mission4_title: "???",
+      mission5_title: "???",
+      mission6_title: "???",
+      btn_view_project: "VER REPOSITÓRIO",
 
       education_title: "FORMAÇÃO ACADÊMICA",
       education_degree1_title: "Bacharelado em Ciência da Computação",
@@ -96,12 +98,24 @@ document.addEventListener("DOMContentLoaded", () => {
       contact_links_established: "> Conexões diretas estabelecidas:",
       contact_connection_terminated: "> Conexão terminada.",
 
-      mission1_modal_title: "MISSÃO 01: Sistema de Portfólio",
-      mission1_modal_desc:
-        "Este próprio sistema. Um portfólio interativo com tema cyberpunk construído com HTML, CSS e JavaScript puros.",
-      mission2_modal_title: "MISSÃO 02: Aplicativo CRUD",
-      mission2_modal_desc:
-        "Uma aplicação full-stack para gerenciamento de dados com interface limpa.",
+      // Chaves dos Modais (Seguindo o HTML acima)
+      mission1_modal_title: "MISSÃO 01: Portfólio",
+      mission1_modal_desc: "Este próprio sistema um portfólio interativo com tema retrowave construído com HTML, CSS e JavaScript puros para exibir meu portfólio de habilidades e projetos.",
+
+      mission2_modal_title: "MISSÃO 02: ???",
+      mission2_modal_desc: "[...]",
+
+      mission3_modal_title: "MISSÃO 03: ???",
+      mission3_modal_desc: "[...]",
+
+      mission4_modal_title: "MISSÃO 04: ???",
+      mission4_modal_desc: "[...]",
+
+      mission5_modal_title: "MISSÃO 05: ???",
+      mission5_modal_desc: "[...]",
+
+      mission6_modal_title: "MISSÃO 06: ???",
+      mission6_modal_desc: "[...]"
     },
 
     en: {
@@ -123,15 +137,18 @@ document.addEventListener("DOMContentLoaded", () => {
       profile_status: "STATUS:",
 
       profile_class_value: "Full Stack Developer",
-    profile_location_value: "Brazil",
-    profile_status_value: "Available for new missions",
+      profile_location_value: "Brazil",
+      profile_status_value: "Available for new missions",
 
       missions_title: "PROJECTS // MISSIONS",
       mission1_title: "Portfolio System",
-      mission2_title: "CRUD App",
-      mission4_title: "E-commerce Bot",
-      mission5_title: "Analytics Dashboard",
-      mission6_title: "Hybrid Mobile App",
+      mission2_title: "???",
+      mission3_title: "???",
+      mission4_title: "???",
+      mission5_title: "???",
+      mission6_title: "???",
+      btn_view_project: "VIEW REPOSITORY",
+      
 
       education_title: "ACADEMIC EDUCATION",
       education_degree1_title: "Bachelor’s Degree in Computer Science",
@@ -148,12 +165,25 @@ document.addEventListener("DOMContentLoaded", () => {
       contact_links_established: "> Direct connections established:",
       contact_connection_terminated: "> Connection terminated.",
 
-      mission1_modal_title: "MISSION 01: Portfolio System",
-      mission1_modal_desc:
-        "This very system. An interactive, cyberpunk-themed portfolio.",
-      mission2_modal_title: "MISSION 02: CRUD App",
-      mission2_modal_desc: "A full-stack application for data management.",
-    },
+      // Chaves dos Modais
+      mission1_modal_title: "MISSION 01: Portfolio",
+      mission1_modal_desc: "This very system, an interactive retrowave-themed portfolio built with pure HTML, CSS, and JavaScript to showcase my skills and projects.",
+
+      mission2_modal_title: "MISSION 02: ???",
+      mission2_modal_desc: "[...]",
+
+      mission3_modal_title: "MISSION 03: ???",
+      mission3_modal_desc: "[...]",
+
+      mission4_modal_title: "MISSION 04: ???",
+      mission4_modal_desc: "[...]",
+
+      mission5_modal_title: "MISSION 05: ???",
+      mission5_modal_desc: "[...]",
+
+      mission6_modal_title: "MISSION 06: ???",
+      mission6_modal_desc: "[...]"
+    }
   };
 
   function traduzirPagina(idioma) {
