@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Este é um projeto de portfólio pessoal gamificado com tema cyberpunk / RetroWave, criado por mim para um portfolio. A interface é inspirada em elementos de jogos de ficção científica, como *Cyberpunk 2077*, e apresenta uma estética mais retro tentando construir em um estilo na qual eu sou fissurado, com efeitos de neon, glitch e HUD (Heads-Up Display).
+Este é um projeto de portfólio pessoal gamificado com tema RetroWave, criado por mim para um portfolio. A interface é inspirada em elementos de jogos de ficção científica, como *Cyberpunk 2077*, e apresenta uma estética mais retro tentando construir em um estilo na qual eu sou fissurado, com efeitos de neon, glitch e HUD (Heads-Up Display). Claro que minimalista...
 
 O projeto foi desenvolvido utilizando apenas HTML5, CSS3 e JavaScript puro, com foco em criar uma experiência de usuário imersiva e visualmente impactante.
 
@@ -16,11 +16,7 @@ O projeto foi desenvolvido utilizando apenas HTML5, CSS3 e JavaScript puro, com 
 
 - **Tela de Loading:** Animação de boot de sistema para imersão inicial.
 - **Dashboard Interativo:** Painel principal com acesso ao sistema.
-- **Perfil Gamificado:** Exibição de habilidades e nível do desenvolvedor.
 - **Projetos como Missões:** Cards interativos que abrem modais com detalhes dos projetos.
-- **Seção de Lore:** Contextualização do universo cyberpunk.
-- **Sistema de XP:** Barra de progresso e sistema de níveis para engajamento.
-- **Formulário de Contato Hacker:** Interface de terminal para envio de mensagens.
 - **Responsividade:** Adaptado para visualização em desktops e dispositivos móveis.
 
 ## Como Executar
