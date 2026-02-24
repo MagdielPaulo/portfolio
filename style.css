@@ -1,103 +1,138 @@
 /* =========================================================
-   CYBER PORTFÓLIO — CSS LIMPO (SEM SOBRE MIM)
+   01) VARIÁVEIS / TEMAS
 ========================================================= */
+:root {
+  --cor-fundo: #0d031a;
+  --cor-texto-principal: #fff;
+  --cor-texto-destaque: #ff00ff;
 
-/* 01) VARIÁVEIS / TEMAS */
-:root{
-  --cor-fundo:#0d031a;
-  --cor-texto-principal:#fff;
-  --cor-texto-destaque:#ff00ff;
-  --cor-neon-1:#ff00ff;
-  --cor-neon-2:#00ffff;
-  --cor-borda-cartao:rgba(0,255,255,.5);
-  --cor-fundo-cartao:rgba(255,0,255,.05);
-  --cor-fundo-header:rgba(13,3,26,.8);
-  --cor-glitch-1:#ff00ff;
-  --cor-glitch-2:#00ffff;
-  --brilho-flicker:#fff;
-  --gradiente-fundo:linear-gradient(45deg,#0d031a,#1a0831,#0d031a);
-  --fonte-primaria:"Orbitron",sans-serif;
-  --fonte-secundaria:"Rajdhani",sans-serif;
+  --cor-neon-1: #ff00ff;
+  --cor-neon-2: #00ffff;
+
+  --cor-borda-cartao: rgba(0, 255, 255, 0.5);
+  --cor-fundo-cartao: rgba(255, 0, 255, 0.05);
+  --cor-fundo-header: rgba(13, 3, 26, 0.8);
+
+  --cor-glitch-1: #ff00ff;
+  --cor-glitch-2: #00ffff;
+  --brilho-flicker: #fff;
+
+  --gradiente-fundo: linear-gradient(45deg, #0d031a, #1a0831, #0d031a);
+
+  --fonte-primaria: "Orbitron", sans-serif;
+  --fonte-secundaria: "Rajdhani", sans-serif;
 }
 
-body.tema-claro{
-  --cor-fundo:#f4f4f9;
-  --cor-texto-principal:#111;
-  --cor-texto-destaque:#0055ff;
-  --cor-neon-1:#0055ff;
-  --cor-neon-2:#ff00ff;
-  --cor-borda-cartao:rgba(0,0,0,.10);
-  --cor-fundo-cartao:rgba(255,255,255,.15); /* glass */
-  --cor-fundo-header:rgba(255,255,255,.9);
-  --brilho-flicker:rgba(0,85,255,.25);
-  --gradiente-fundo:linear-gradient(45deg,#f4f4f9,#e0e0eb,#f4f4f9);
+body.tema-claro {
+  --cor-fundo: #f4f4f9;
+  --cor-texto-principal: #111;
+  --cor-texto-destaque: #0055ff;
+
+  --cor-neon-1: #0055ff;
+  --cor-neon-2: #ff00ff;
+
+  --cor-borda-cartao: rgba(0, 0, 0, 0.1);
+  --cor-fundo-cartao: rgba(255, 255, 255, 0.15); /* glass */
+  --cor-fundo-header: rgba(255, 255, 255, 0.9);
+
+  --brilho-flicker: rgba(0, 85, 255, 0.25);
+  --gradiente-fundo: linear-gradient(45deg, #f4f4f9, #e0e0eb, #f4f4f9);
 }
 
-/* 02) RESET / BASE */
-*{margin:0;padding:0;box-sizing:border-box;}
-html{
-  scroll-behavior:smooth;
-  scroll-padding-top:0px;
-  scroll-snap-type:y mandatory;
-  overflow-x:hidden;
+/* =========================================================
+   02) RESET / BASE
+========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-  background:var(--gradiente-fundo);
-  background-size:400% 400%;
-  animation:gradientMove 15s ease infinite;
-  color:var(--cor-texto-principal);
-  font-family:var(--fonte-secundaria);
-  transition:background-color .4s ease,color .4s ease;
-  transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s ease;
-}
-body.tema-claro{background:var(--cor-fundo);background-image:none;}
 
-/* 03) SEÇÕES + FUNDO ANIMADO (SEM IMAGENS) */
-section{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  scroll-snap-align:center;
-  position:relative;
-  overflow:hidden;
-  padding:40px 20px;
-  text-align:center;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 0px;
+  scroll-snap-type: y mandatory;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--gradiente-fundo);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+
+  color: var(--cor-texto-principal);
+  font-family: var(--fonte-secundaria);
+
+  /* Mantido o comportamento (removida duplicação de transition) */
+  transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.5s ease;
+}
+
+body.tema-claro {
+  background: var(--cor-fundo);
+  background-image: none;
+}
+
+/* =========================================================
+   03) SEÇÕES + FUNDO ANIMADO (SEM IMAGENS)
+   Cada seção ajusta --bg1/--bg2/--bg3 no bloco 04
+========================================================= */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  scroll-snap-align: center;
+  position: relative;
+  overflow: hidden;
+
+  padding: 40px 20px;
+  text-align: center;
 
   /* cores padrão (cada seção sobrescreve) */
-  --bg1:rgba(255,0,255,.22);
-  --bg2:rgba(106,0,255,.18);
-  --bg3:rgba(0,255,255,.18);
+  --bg1: rgba(255, 0, 255, 0.22);
+  --bg2: rgba(106, 0, 255, 0.18);
+  --bg3: rgba(0, 255, 255, 0.18);
 }
-section > *{position:relative;z-index:1;}
+
+section > * {
+  position: relative;
+  z-index: 1;
+}
 
 section::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  /* Gradiente que parece uma nebulosa em movimento */
-  background: 
-    radial-gradient(circle at 10% 20%, var(--bg1) 0%, transparent 40%),
+
+  /* “Nebulosa” em movimento */
+  background: radial-gradient(circle at 10% 20%, var(--bg1) 0%, transparent 40%),
     radial-gradient(circle at 90% 80%, var(--bg2) 0%, transparent 40%),
     radial-gradient(circle at 50% 50%, var(--bg3) 0%, transparent 50%);
   background-size: 200% 200%;
   animation: meshMove 15s ease-in-out infinite alternate;
+
   opacity: 0.4;
   filter: blur(60px);
   transition: opacity 0.8s ease;
 }
 
-section::after{
-  content:"";
-  position:absolute;inset:0;
-  z-index:0;pointer-events:none;
-  background:linear-gradient(
+section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  z-index: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
     to bottom,
-    rgba(0,0,0,.60) 0%,
-    rgba(0,0,0,.32) 45%,
-    rgba(0,0,0,.60) 100%
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.32) 45%,
+    rgba(0, 0, 0, 0.6) 100%
   );
 }
 
@@ -106,177 +141,340 @@ body.tema-claro section::before {
   filter: blur(100px);
 }
 
-body.tema-claro section::after{
-  background:linear-gradient(
+body.tema-claro section::after {
+  background: linear-gradient(
     to bottom,
-    rgba(255,255,255,.55) 0%,
-    rgba(255,255,255,.25) 45%,
-    rgba(255,255,255,.55) 100%
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.25) 45%,
+    rgba(255, 255, 255, 0.55) 100%
   );
 }
 
-section h2{
-  font-family:var(--fonte-primaria);
-  font-size:2.5rem;
-  margin-bottom:40px;
-  animation:flicker 3s linear infinite;
+section h2 {
+  font-family: var(--fonte-primaria);
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  animation: flicker 3s linear infinite;
 }
 
-/* 04) CORES POR SEÇÃO (só troca as variáveis) */
-#inicio{--bg1:rgba(255,0,255,.28);--bg2:rgba(106,0,255,.22);--bg3:rgba(0,255,255,.18);}
-#perfil{--bg1:rgba(0,255,255,.22);--bg2:rgba(0,68,255,.20);--bg3:rgba(106,0,255,.18);}
-#missoes{--bg1:rgba(255,0,128,.22);--bg2:rgba(255,0,255,.18);--bg3:rgba(106,0,255,.18);}
-#formacao{--bg1:rgba(0,68,255,.22);--bg2:rgba(0,195,255,.18);--bg3:rgba(106,0,255,.16);}
-#contato{--bg1:rgba(0,255,255,.20);--bg2:rgba(255,0,255,.18);--bg3:rgba(0,68,255,.16);}
+/* =========================================================
+   04) CORES POR SEÇÃO (sobrescreve apenas variáveis)
+========================================================= */
+#inicio {
+  --bg1: rgba(255, 0, 255, 0.28);
+  --bg2: rgba(106, 0, 255, 0.22);
+  --bg3: rgba(0, 255, 255, 0.18);
+}
+#perfil {
+  --bg1: rgba(0, 255, 255, 0.22);
+  --bg2: rgba(0, 68, 255, 0.2);
+  --bg3: rgba(106, 0, 255, 0.18);
+}
+#missoes {
+  --bg1: rgba(255, 0, 128, 0.22);
+  --bg2: rgba(255, 0, 255, 0.18);
+  --bg3: rgba(106, 0, 255, 0.18);
+}
+#formacao {
+  --bg1: rgba(0, 68, 255, 0.22);
+  --bg2: rgba(0, 195, 255, 0.18);
+  --bg3: rgba(106, 0, 255, 0.16);
+}
+#contato {
+  --bg1: rgba(0, 255, 255, 0.2);
+  --bg2: rgba(255, 0, 255, 0.18);
+  --bg3: rgba(0, 68, 255, 0.16);
+}
 
-/* 05) ANIMAÇÕES */
-@keyframes gradientMove{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:100% 100%;}
+/* =========================================================
+   05) ANIMAÇÕES
+========================================================= */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
-@keyframes flicker{
-  0%,18%,22%,25%,53%,57%,100%{text-shadow:0 0 5px var(--brilho-flicker),0 0 10px var(--cor-neon-1);}
-  20%,24%,55%{text-shadow:none;}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 5px var(--brilho-flicker), 0 0 10px var(--cor-neon-1);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
 }
-@keyframes flicker-claro{
-  0%,18%,22%,25%,53%,57%,100%{text-shadow:0 0 5px rgba(0,119,255,.2),0 0 10px var(--cor-neon-1);}
-  20%,24%,55%{text-shadow:none;}
+
+@keyframes flicker-claro {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 5px rgba(0, 119, 255, 0.2), 0 0 10px var(--cor-neon-1);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
 }
-@keyframes pulse{
-  0%,100%{opacity:.7;text-shadow:0 0 4px var(--cor-neon-2);}
-  50%{opacity:1;text-shadow:0 0 10px var(--cor-neon-2);}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    text-shadow: 0 0 4px var(--cor-neon-2);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--cor-neon-2);
+  }
 }
 
 @keyframes meshMove {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 100% 100%; }
-  100% { background-position: 50% 0%; }
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
 }
 
+/* Ajuste de animação/contraste no tema claro */
 body.tema-claro .glitch,
-body.tema-claro section h2{
-  animation:flicker-claro 3s linear infinite;
-  color:var(--cor-texto-principal);
+body.tema-claro section h2 {
+  animation: flicker-claro 3s linear infinite;
+  color: var(--cor-texto-principal);
 }
 
-/* 06) GLITCH */
-.glitch{position:relative;animation:flicker 2s linear infinite;}
-.glitch::before,.glitch::after{
-  content:attr(data-text);
-  position:absolute;top:0;left:0;
-  width:100%;height:100%;
-  overflow:hidden;background:transparent;
-}
-.glitch::before{left:2px;text-shadow:-1px 0 var(--cor-glitch-1);animation:glitch-anim-1 2s infinite linear reverse;}
-.glitch::after{left:-2px;text-shadow:-1px 0 var(--cor-glitch-2);animation:glitch-anim-2 2s infinite linear reverse;}
-@keyframes glitch-anim-1{
-  0%,100%{clip-path:inset(50% 0 51% 0);}
-  25%{clip-path:inset(20% 0 30% 0);}
-  50%{clip-path:inset(80% 0 1% 0);}
-  75%{clip-path:inset(40% 0 45% 0);}
-}
-@keyframes glitch-anim-2{
-  0%,100%{clip-path:inset(1% 0 90% 0);}
-  25%{clip-path:inset(70% 0 5% 0);}
-  50%{clip-path:inset(30% 0 60% 0);}
-  75%{clip-path:inset(10% 0 85% 0);}
+/* =========================================================
+   06) GLITCH
+========================================================= */
+.glitch {
+  position: relative;
+  animation: flicker 2s linear infinite;
 }
 
-/* 07) LOADER */
-#carregador{
-  display:flex;flex-direction:column;
-  justify-content:center;align-items:center;
-  height:100vh;background:var(--cor-fundo);
-  font-family:var(--fonte-primaria);font-size:2rem;
-}
-.barra-progresso{
-  width:80%;max-width:600px;height:20px;
-  border:2px solid var(--cor-texto-destaque);
-  margin-top:20px;background:var(--cor-fundo-cartao);
-}
-.progresso{
-  width:0;height:100%;
-  background:var(--cor-texto-destaque);
-  box-shadow:0 0 10px var(--cor-texto-destaque);
-  transition:width .1s linear;
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
 }
 
-/* 08) HEADER / NAV */
+.glitch::before {
+  left: 2px;
+  text-shadow: -1px 0 var(--cor-glitch-1);
+  animation: glitch-anim-1 2s infinite linear reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -1px 0 var(--cor-glitch-2);
+  animation: glitch-anim-2 2s infinite linear reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0%,
+  100% {
+    clip-path: inset(50% 0 51% 0);
+  }
+  25% {
+    clip-path: inset(20% 0 30% 0);
+  }
+  50% {
+    clip-path: inset(80% 0 1% 0);
+  }
+  75% {
+    clip-path: inset(40% 0 45% 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0%,
+  100% {
+    clip-path: inset(1% 0 90% 0);
+  }
+  25% {
+    clip-path: inset(70% 0 5% 0);
+  }
+  50% {
+    clip-path: inset(30% 0 60% 0);
+  }
+  75% {
+    clip-path: inset(10% 0 85% 0);
+  }
+}
+
+/* =========================================================
+   07) LOADER
+========================================================= */
+#carregador {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  background: var(--cor-fundo);
+
+  font-family: var(--fonte-primaria);
+  font-size: 2rem;
+}
+
+.barra-progresso {
+  width: 80%;
+  max-width: 600px;
+  height: 20px;
+
+  border: 2px solid var(--cor-texto-destaque);
+  margin-top: 20px;
+  background: var(--cor-fundo-cartao);
+}
+
+.progresso {
+  width: 0;
+  height: 100%;
+
+  background: var(--cor-texto-destaque);
+  box-shadow: 0 0 10px var(--cor-texto-destaque);
+  transition: width 0.1s linear;
+}
+
+/* =========================================================
+   08) HEADER / NAV
+========================================================= */
 header {
   position: fixed;
   top: 0;
   width: 100%;
   height: 80px;
-  padding: 0 40px; /* Aumentei o respiro lateral */
+  padding: 0 40px;
+
   z-index: 100;
   display: flex;
-  justify-content: space-between; /* Mantém botões de um lado e nav do outro */
+  justify-content: space-between;
   align-items: center;
+
   background: var(--cor-fundo-header);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--cor-borda-cartao);
 }
+
 nav {
   display: flex;
   align-items: center;
-  justify-content: center; /* ISSO centraliza os links */
-  flex: 1; /* Faz o nav ocupar o espaço central disponível */
-  gap: 20px; /* Aumentei o espaço entre os nomes */
+  justify-content: center;
+  flex: 1;
+
+  gap: 20px;
   margin: 0 20px;
 }
-nav::-webkit-scrollbar{display:none;}
+
+nav::-webkit-scrollbar {
+  display: none;
+}
+
 nav a {
   color: var(--cor-texto-principal);
   text-decoration: none;
   padding: 10px 14px;
+
   font-family: var(--fonte-primaria);
-  font-size: 1.1rem; /* Aumentei o tamanho da letra (era 0.9rem) */
-  font-weight: 700;  /* Deixei um pouco mais negrito para destacar */
-  transition: all .3s ease;
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  transition: all 0.3s ease;
   white-space: nowrap;
   text-transform: uppercase;
 }
-nav a:hover{
-  color:var(--cor-texto-destaque);
-  text-shadow:0 0 10px var(--cor-texto-destaque),0 0 20px var(--cor-neon-1);
-  background:rgba(255,0,255,.10);
-  transform:translateY(-3px);
-}
-.controles-interface{display:flex;gap:8px;flex-shrink:0;}
-.controles-interface button{
-  font-size:.9rem;padding:8px 16px;
-  background:transparent;cursor:pointer;
-  font-family:var(--fonte-primaria);
-  transition:all .3s ease;
-  white-space:nowrap;border-radius:12px;
-  border:2px solid var(--cor-neon-2);
-  color:var(--cor-neon-2);
-  box-shadow:0 0 5px var(--cor-neon-2);
-  text-transform:uppercase;font-weight:700;
-}
-#btn-idioma{
-  border-color:var(--cor-neon-1);
-  color:var(--cor-neon-1);
-  box-shadow:0 0 5px var(--cor-neon-1);
-}
-.controles-interface button:hover{
-  background:var(--cor-texto-principal);
-  color:var(--cor-fundo);
-  box-shadow:0 0 15px var(--cor-texto-principal);
-  transform:scale(1.05);
+
+nav a:hover {
+  color: var(--cor-texto-destaque);
+  text-shadow: 0 0 10px var(--cor-texto-destaque), 0 0 20px var(--cor-neon-1);
+  background: rgba(255, 0, 255, 0.1);
+  transform: translateY(-3px);
 }
 
+.controles-interface {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.controles-interface button {
+  font-size: 0.9rem;
+  padding: 8px 16px;
+
+  background: transparent;
+  cursor: pointer;
+
+  font-family: var(--fonte-primaria);
+  transition: all 0.3s ease;
+
+  white-space: nowrap;
+  border-radius: 12px;
+
+  border: 2px solid var(--cor-neon-2);
+  color: var(--cor-neon-2);
+  box-shadow: 0 0 5px var(--cor-neon-2);
+
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#btn-idioma {
+  border-color: var(--cor-neon-1);
+  color: var(--cor-neon-1);
+  box-shadow: 0 0 5px var(--cor-neon-1);
+}
+
+.controles-interface button:hover {
+  background: var(--cor-texto-principal);
+  color: var(--cor-fundo);
+  box-shadow: 0 0 15px var(--cor-texto-principal);
+  transform: scale(1.05);
+}
+
+/* Botão do modal (link para repositório/projeto) */
 .btn-missao {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
+
   background-color: transparent;
-  color: #ff00ff; /* Cor Neon (Magenta) */
+  color: #ff00ff;
   border: 2px solid #ff00ff;
+
   text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
+
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -284,18 +482,30 @@ nav a:hover{
 .btn-missao:hover {
   background-color: #ff00ff;
   color: #000;
-  box-shadow: 0 0 15px #ff00ff; /* Efeito de brilho neon */
+  box-shadow: 0 0 15px #ff00ff;
 }
 
-/* 09) CARDS / COMPONENTES */
-.cartao-interativo{transition:transform .1s ease;transform-style:preserve-3d;}
-.cartao-perfil,.cartao-missao,.terminal,.cartao-formacao{
-  background:var(--cor-fundo-cartao);
-  border:1px solid var(--cor-borda-cartao);
-  padding:30px;
-  backdrop-filter:blur(10px);
-  max-width:800px;width:100%;
-  transition:background-color .4s ease,border .4s ease,box-shadow .4s ease;
+/* =========================================================
+   09) CARDS / COMPONENTES
+========================================================= */
+.cartao-interativo {
+  transition: transform 0.1s ease;
+  transform-style: preserve-3d;
+}
+
+.cartao-perfil,
+.cartao-missao,
+.terminal,
+.cartao-formacao {
+  background: var(--cor-fundo-cartao);
+  border: 1px solid var(--cor-borda-cartao);
+  padding: 30px;
+
+  backdrop-filter: blur(10px);
+  max-width: 800px;
+  width: 100%;
+
+  transition: background-color 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* Tema claro — mais legível + glass */
@@ -303,145 +513,241 @@ body.tema-claro .cartao-perfil,
 body.tema-claro .cartao-missao,
 body.tema-claro .terminal,
 body.tema-claro .cartao-formacao,
-body.tema-claro .caixa-hud{
-  background:rgba(255,255,255,.18) !important;
-  border:1px solid rgba(0,85,255,.45);
-  backdrop-filter:blur(18px) saturate(1.15);
-  -webkit-backdrop-filter:blur(18px) saturate(1.15);
-  box-shadow:0 10px 30px rgba(0,0,0,.08), inset 0 0 15px rgba(255,255,255,.25);
+body.tema-claro .caixa-hud {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border: 1px solid rgba(0, 85, 255, 0.45);
+
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08),
+    inset 0 0 15px rgba(255, 255, 255, 0.25);
 }
+
 body.tema-claro .cartao-perfil p,
 body.tema-claro .cartao-formacao p,
 body.tema-claro .cartao-missao p,
-body.tema-claro .terminal{
-  color:#111;
-  font-weight:600;
-}
-body.tema-claro .cartao-perfil .rotulo{
-  color:#0033cc;
-  font-weight:800;
-}
-body.tema-claro #inicio h1.glitch{ text-shadow:0 0 0 transparent; }
-
-/* 10) INÍCIO */
-.caixa-hud{
-  border:2px solid var(--cor-neon-1);
-  padding:40px;
-  background:var(--cor-fundo-cartao);
-  backdrop-filter:blur(5px);
-  box-shadow:0 0 20px var(--cor-neon-1) inset;
-  display:flex;flex-direction:column;align-items:center;
-}
-#inicio h1{
-  font-size:2.5rem;
-  font-family:var(--fonte-primaria);
-  margin-bottom:30px;
-}
-.botao-acao{
-  display:inline-block;
-  padding:15px 30px;
-  border:2px solid var(--cor-texto-destaque);
-  color:var(--cor-texto-destaque);
-  background:transparent;
-  font-family:var(--fonte-primaria);
-  text-decoration:none;
-  transition:all .3s ease;
-}
-.botao-acao:hover{
-  background:var(--cor-texto-destaque);
-  color:var(--cor-fundo);
-  box-shadow:0 0 20px var(--cor-texto-destaque);
+body.tema-claro .terminal {
+  color: #111;
+  font-weight: 600;
 }
 
-/* 11) PERFIL */
-.cartao-perfil p{font-size:1.2rem;margin-bottom:10px;}
-.cartao-perfil .rotulo{
-  color:var(--cor-texto-destaque);
-  font-weight:700;
-  animation:pulse 3s infinite;
+body.tema-claro .cartao-perfil .rotulo {
+  color: #0033cc;
+  font-weight: 800;
 }
 
-/* 12) MISSÕES */
-.grade-missoes{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:20px;
-  width:100%;
-  max-width:1000px;
-}
-.cartao-missao{cursor:pointer;padding:30px;}
-.cartao-missao h3{
-  font-family:var(--fonte-primaria);
-  color:var(--cor-texto-destaque);
-  margin-bottom:10px;
+body.tema-claro #inicio h1.glitch {
+  text-shadow: 0 0 0 transparent;
 }
 
-/* 13) FORMAÇÃO */
-.cartao-formacao{text-align:left;margin-bottom:20px;}
-.cartao-formacao h3{
-  font-family:var(--fonte-primaria);
-  color:var(--cor-texto-destaque);
-}
-.cartao-formacao p{margin-top:6px;}
+/* =========================================================
+   10) INÍCIO
+========================================================= */
+.caixa-hud {
+  border: 2px solid var(--cor-neon-1);
+  padding: 40px;
 
-/* 14) CONTATO / TERMINAL */
-.terminal{text-align:left;font-family:"Courier New",Courier,monospace;}
-.cabecalho-terminal{
-  background:var(--cor-texto-principal);
-  color:var(--cor-fundo);
-  padding:6px 8px;
-  transition:background-color .4s ease,color .4s ease;
-}
-.corpo-terminal{padding:15px;}
-.links-contato{margin:15px 0;text-align:center;}
-.links-contato a{
-  color:var(--cor-texto-destaque);
-  text-decoration:none;margin:0 10px;
-  font-family:var(--fonte-primaria);
-  transition:all .3s ease;
-}
-.links-contato a:hover{
-  text-shadow:0 0 10px var(--cor-texto-destaque);
-  background:var(--cor-texto-destaque);
-  color:var(--cor-fundo);
-  padding:2px 6px;
-  border-radius:6px;
+  background: var(--cor-fundo-cartao);
+  backdrop-filter: blur(5px);
+
+  box-shadow: 0 0 20px var(--cor-neon-1) inset;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* 15) MODAL */
-.modal{
-  display:none;
-  position:fixed;inset:0;
-  z-index:1000;
-  overflow:auto;
-  background:rgba(0,0,0,.80);
-  backdrop-filter:blur(6px);
+#inicio h1 {
+  font-size: 2.5rem;
+  font-family: var(--fonte-primaria);
+  margin-bottom: 30px;
 }
-.conteudo-modal{
-  background:var(--cor-fundo);
-  margin:15% auto;
-  padding:40px;
-  border:2px solid var(--cor-neon-1);
-  width:80%;
-  max-width:600px;
-  position:relative;
-  box-shadow:0 0 30px var(--cor-neon-1);
+
+.botao-acao {
+  display: inline-block;
+  padding: 15px 30px;
+
+  border: 2px solid var(--cor-texto-destaque);
+  color: var(--cor-texto-destaque);
+  background: transparent;
+
+  font-family: var(--fonte-primaria);
+  text-decoration: none;
+
+  transition: all 0.3s ease;
 }
-.botao-fechar{
-  color:#aaa;
-  font-size:28px;font-weight:700;
-  position:absolute;top:10px;right:20px;
-  cursor:pointer;
+
+.botao-acao:hover {
+  background: var(--cor-texto-destaque);
+  color: var(--cor-fundo);
+  box-shadow: 0 0 20px var(--cor-texto-destaque);
 }
-.botao-fechar:hover{color:var(--cor-texto-destaque);}
 
+/* =========================================================
+   11) PERFIL
+========================================================= */
+.cartao-perfil p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
 
+.cartao-perfil .rotulo {
+  color: var(--cor-texto-destaque);
+  font-weight: 700;
+  animation: pulse 3s infinite;
+}
 
-/* 17) RESPONSIVIDADE */
-@media (max-width:768px){
-  section h2{font-size:2rem;}
-  #inicio h1{font-size:1.8rem;}
-  nav{display:none;}
-  .controles-interface{position:static;margin-top:15px;}
-  .conteudo-modal{width:90%;margin:25% auto;}
+/* =========================================================
+   12) MISSÕES
+========================================================= */
+.grade-missoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+
+  width: 100%;
+  max-width: 1000px;
+}
+
+.cartao-missao {
+  cursor: pointer;
+  padding: 30px;
+}
+
+.cartao-missao h3 {
+  font-family: var(--fonte-primaria);
+  color: var(--cor-texto-destaque);
+  margin-bottom: 10px;
+}
+
+/* =========================================================
+   13) FORMAÇÃO
+========================================================= */
+.cartao-formacao {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.cartao-formacao h3 {
+  font-family: var(--fonte-primaria);
+  color: var(--cor-texto-destaque);
+}
+
+.cartao-formacao p {
+  margin-top: 6px;
+}
+
+/* =========================================================
+   14) CONTATO / TERMINAL
+========================================================= */
+.terminal {
+  text-align: left;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.cabecalho-terminal {
+  background: var(--cor-texto-principal);
+  color: var(--cor-fundo);
+  padding: 6px 8px;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.corpo-terminal {
+  padding: 15px;
+}
+
+.links-contato {
+  margin: 15px 0;
+  text-align: center;
+}
+
+.links-contato a {
+  color: var(--cor-texto-destaque);
+  text-decoration: none;
+  margin: 0 10px;
+
+  font-family: var(--fonte-primaria);
+  transition: all 0.3s ease;
+}
+
+.links-contato a:hover {
+  text-shadow: 0 0 10px var(--cor-texto-destaque);
+  background: var(--cor-texto-destaque);
+  color: var(--cor-fundo);
+
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+/* =========================================================
+   15) MODAL
+========================================================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+
+  z-index: 1000;
+  overflow: auto;
+
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+.conteudo-modal {
+  background: var(--cor-fundo);
+  margin: 15% auto;
+  padding: 40px;
+
+  border: 2px solid var(--cor-neon-1);
+
+  width: 80%;
+  max-width: 600px;
+
+  position: relative;
+  box-shadow: 0 0 30px var(--cor-neon-1);
+}
+
+.botao-fechar {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: 700;
+
+  position: absolute;
+  top: 10px;
+  right: 20px;
+
+  cursor: pointer;
+}
+
+.botao-fechar:hover {
+  color: var(--cor-texto-destaque);
+}
+
+/* =========================================================
+   17) RESPONSIVIDADE
+========================================================= */
+@media (max-width: 768px) {
+  section h2 {
+    font-size: 2rem;
+  }
+
+  #inicio h1 {
+    font-size: 1.8rem;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .controles-interface {
+    position: static;
+    margin-top: 15px;
+  }
+
+  .conteudo-modal {
+    width: 90%;
+    margin: 25% auto;
+  }
 }

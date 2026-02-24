@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  /* =========================================================
-     INICIALIZAÇÃO / LOADING
-  ========================================================= */
+  // =========================
+  // 1) LOADER (progresso fake) + liberação do conteúdo
+  // =========================
   const carregador = document.getElementById("carregador");
   const conteudoPrincipal = document.getElementById("conteudo-principal");
   const progresso = document.querySelector(".progresso");
@@ -17,14 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     largura++;
-    progresso.style.width = largura + "%";
+    progresso.style.width = `${largura}%`;
   }, 15);
 
-  /* =========================================================
-     SISTEMA DE TEMA (CLARO/ESCURO)
-  ========================================================= */
-  const btnTema = document.getElementById("btn-tema");
+  // =========================
+  // 2) TEMA (claro/escuro) + persistência (localStorage)
+  // =========================
   const body = document.body;
+  const btnTema = document.getElementById("btn-tema");
 
   function aplicarTema(tema) {
     if (tema === "claro") {
@@ -42,13 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const temaSalvo = localStorage.getItem("temaPreferido");
-  if (temaSalvo) {
-    aplicarTema(temaSalvo);
-  }
+  if (temaSalvo) aplicarTema(temaSalvo);
 
-  /* =========================================================
-     SISTEMA DE IDIOMA (PT/EN)
-  ========================================================= */
+  // =========================
+  // 3) IDIOMA (PT/EN) + persistência (localStorage)
+  // Regras:
+  // - Elementos traduzíveis precisam de [data-key]
+  // - Se o elemento tiver .glitch, também atualiza data-text
+  // =========================
   const btnIdioma = document.getElementById("btn-idioma");
 
   const traducoes = {
@@ -92,15 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
       education_degree2_inst: "Centro Universitário União das Américas Descomplica",
       education_degree2_period: "Janeiro/2026 – Abril/2026 (em andamento)",
 
-
       contact_title: "CONTATO",
       contact_command1: "> executar_contato.exe",
       contact_links_established: "> Conexões diretas estabelecidas:",
       contact_connection_terminated: "> Conexão terminada.",
 
-      // Chaves dos Modais (Seguindo o HTML acima)
       mission1_modal_title: "MISSÃO 01: Portfólio",
-      mission1_modal_desc: "Este próprio sistema um portfólio interativo com tema retrowave construído com HTML, CSS e JavaScript puros para exibir meu portfólio de habilidades e projetos.",
+      mission1_modal_desc:
+        "Este próprio sistema um portfólio interativo com tema retrowave construído com HTML, CSS e JavaScript puros para exibir meu portfólio de habilidades e projetos.",
 
       mission2_modal_title: "MISSÃO 02: ???",
       mission2_modal_desc: "[...]",
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
       mission5_modal_desc: "[...]",
 
       mission6_modal_title: "MISSÃO 06: ???",
-      mission6_modal_desc: "[...]"
+      mission6_modal_desc: "[...]",
     },
 
     en: {
@@ -130,12 +130,12 @@ document.addEventListener("DOMContentLoaded", () => {
       theme_button: "Theme",
       main_title: "Full-Stack Developer",
       access_button: "ACCESS SYSTEM",
+
       profile_title: "USER PROFILE",
       profile_user: "USER:",
       profile_class: "CLASS:",
       profile_location: "LOCATION:",
       profile_status: "STATUS:",
-
       profile_class_value: "Full Stack Developer",
       profile_location_value: "Brazil",
       profile_status_value: "Available for new missions",
@@ -148,7 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
       mission5_title: "???",
       mission6_title: "???",
       btn_view_project: "VIEW REPOSITORY",
-      
 
       education_title: "ACADEMIC EDUCATION",
       education_degree1_title: "Bachelor’s Degree in Computer Science",
@@ -159,15 +158,14 @@ document.addEventListener("DOMContentLoaded", () => {
       education_degree2_inst: "União das Américas Descomplica University Center",
       education_degree2_period: "Jan/2026 – Apr/2026 (in progress)",
 
-
       contact_title: "CONTACT",
       contact_command1: "> run_contact.exe",
       contact_links_established: "> Direct connections established:",
       contact_connection_terminated: "> Connection terminated.",
 
-      // Chaves dos Modais
       mission1_modal_title: "MISSION 01: Portfolio",
-      mission1_modal_desc: "This very system, an interactive retrowave-themed portfolio built with pure HTML, CSS, and JavaScript to showcase my skills and projects.",
+      mission1_modal_desc:
+        "This very system, an interactive retrowave-themed portfolio built with pure HTML, CSS, and JavaScript to showcase my skills and projects.",
 
       mission2_modal_title: "MISSION 02: ???",
       mission2_modal_desc: "[...]",
@@ -182,20 +180,22 @@ document.addEventListener("DOMContentLoaded", () => {
       mission5_modal_desc: "[...]",
 
       mission6_modal_title: "MISSION 06: ???",
-      mission6_modal_desc: "[...]"
-    }
+      mission6_modal_desc: "[...]",
+    },
   };
 
   function traduzirPagina(idioma) {
     document.querySelectorAll("[data-key]").forEach((el) => {
       const key = el.getAttribute("data-key");
+      const texto = traducoes[idioma]?.[key];
 
-      if (traducoes[idioma] && traducoes[idioma][key]) {
-        el.innerText = traducoes[idioma][key];
+      if (!texto) return;
 
-        if (el.classList.contains("glitch")) {
-          el.dataset.text = traducoes[idioma][key];
-        }
+      el.innerText = texto;
+
+      // O efeito glitch usa data-text como fonte do conteúdo duplicado
+      if (el.classList.contains("glitch")) {
+        el.dataset.text = texto;
       }
     });
 
@@ -209,13 +209,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const idiomaSalvo = localStorage.getItem("idiomaPreferido");
-  if (idiomaSalvo) {
-    traduzirPagina(idiomaSalvo);
-  }
+  if (idiomaSalvo) traduzirPagina(idiomaSalvo);
 
-  /* =========================================================
-     EFEITO 3D NOS CARTÕES
-  ========================================================= */
+  // =========================
+  // 4) EFEITO 3D (hover) em .cartao-interativo
+  // =========================
   const cartoes = document.querySelectorAll(".cartao-interativo");
 
   cartoes.forEach((cartao) => {
@@ -237,9 +235,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* =========================================================
-     SISTEMA DE MODAL
-  ========================================================= */
+  // =========================
+  // 5) MODAIS (cards de missão -> abre modal correspondente)
+  // =========================
   const cartoesMissao = document.querySelectorAll(".cartao-missao");
   const modais = document.querySelectorAll(".modal");
   const botoesFechar = document.querySelectorAll(".botao-fechar");
@@ -256,13 +254,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   botoesFechar.forEach((botao) => {
     botao.addEventListener("click", () => {
-      botao.closest(".modal").style.display = "none";
+      const modal = botao.closest(".modal");
+      if (modal) modal.style.display = "none";
     });
   });
 
   window.addEventListener("click", (evento) => {
     modais.forEach((modal) => {
-      if (evento.target == modal) {
+      if (evento.target === modal) {
         modal.style.display = "none";
       }
     });
