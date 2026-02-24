@@ -1,0 +1,116 @@
+/* Estilos para o jogo - Herda a identidade visual do portfólio */
+:root {
+    --cor-fundo: #0d031a;
+    --cor-texto-principal: #ffffff;
+    --cor-texto-destaque: #ff00ff;
+    --cor-neon-1: #ff00ff;
+    --cor-neon-2: #00ffff;
+    --cor-borda-cartao: rgba(0, 255, 255, 0.5);
+    --cor-fundo-cartao: rgba(255, 0, 255, 0.05);
+    --fonte-primaria: 'Orbitron', sans-serif;
+    --fonte-secundaria: 'Rajdhani', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    font-family: var(--fonte-secundaria);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.game-container {
+    border: 2px solid var(--cor-neon-1);
+    padding: 30px;
+    background-color: var(--cor-fundo-cartao);
+    box-shadow: 0 0 20px var(--cor-neon-1) inset;
+    width: 90%;
+    max-width: 800px;
+}
+
+.game-header h1 {
+    font-family: var(--fonte-primaria);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--cor-texto-destaque);
+    text-shadow: 0 0 10px var(--cor-texto-destaque);
+}
+
+.back-link {
+    color: var(--cor-neon-2);
+    text-decoration: none;
+    font-family: var(--fonte-primaria);
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.image-container {
+    margin-bottom: 20px;
+    border: 2px solid var(--cor-borda-cartao);
+    padding: 10px;
+}
+
+#celebrity-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    transition: filter 0.5s ease-in-out;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    font-family: var(--fonte-primaria);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--cor-neon-2);
+}
+
+#guess-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px; 
+}
+
+#round-result {
+    font-family: var(--fonte-primaria);
+    font-size: 1.5rem;
+    height: 30px;
+    margin-bottom: 10px;
+    transition: opacity 0.5s ease;
+}
+
+#round-result.correct {
+    color: var(--cor-neon-2);
+}
+
+#round-result.incorrect {
+    color: #ff4747; /* Um vermelho para erro */
+}
+
+#guess-button, #start-button {
+    display: inline-block;
+    padding: 15px 30px;
+    border: 2px solid var(--cor-texto-destaque);
+    color: var(--cor-texto-destaque);
+    background-color: transparent;
+    font-family: var(--fonte-primaria);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+#hint-button, #skip-button { margin-top: 10px; background-color: transparent; border-color: var(--cor-neon-2); color: var(--cor-neon-2); }
+#start-button { margin-top: 10px; }
+
+#guess-button:hover, #start-button:hover, #hint-button:hover, #skip-button:hover {
+    background-color: var(--cor-texto-destaque);
+    color: var(--cor-fundo);
+    box-shadow: 0 0 20px var(--cor-texto-destaque);
+}

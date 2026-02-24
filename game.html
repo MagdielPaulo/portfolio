@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MISSÃO: ADIVINHE A CELEBRIDADE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>[ MISSÃO: ADIVINHE A CELEBRIDADE ]</h1>
+            <a href="/index.html" class="back-link">[ VOLTAR AO PAINEL ]</a>
+        </header>
+
+        <main class="game-area">
+            <div class="image-container">
+                <img id="celebrity-image" src="" alt="Celebridade Borrada">
+            </div>
+
+            <div class="game-ui">
+                <div class="stats">
+                    <p>PONTUAÇÃO: <span id="score">0</span></p>
+                    <p>TEMPO: <span id="timer">30</span>s</p>
+                </div>
+                <input type="text" id="guess-input" placeholder="Digite o nome...">
+                <div id="round-result"></div>
+                <button id="guess-button">ENVIAR PALPITE</button>
+                <button id="hint-button">[ PEDIR DICA (-10s) ]</button>
+                <button id="skip-button">[ PULAR (-5s) ]</button>
+                <button id="start-button">INICIAR MISSÃO</button>
+            </div>
+        </main>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
