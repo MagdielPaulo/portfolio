@@ -116,7 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
       theme_button: "Theme",
       main_title: "Full-Stack Developer",
       access_button: "ACCESS SYSTEM",
-
       profile_title: "USER PROFILE",
       profile_user: "USER:",
       profile_class: "CLASS:",
@@ -124,8 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
       profile_status: "STATUS:",
 
       profile_class_value: "Full Stack Developer",
-      profile_location_value: "Brazil",
-      profile_status_value: "Available for new missions",
+    profile_location_value: "Brazil",
+    profile_status_value: "Available for new missions",
 
       missions_title: "PROJECTS // MISSIONS",
       mission1_title: "Portfolio System",
