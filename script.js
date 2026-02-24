@@ -70,6 +70,9 @@ document.addEventListener("DOMContentLoaded", () => {
       profile_class: "CLASSE:",
       profile_location: "LOCAL:",
       profile_status: "STATUS:",
+      profile_class_value: "Desenvolvedor Full Stack",
+      profile_location_value: "Brasil",
+      profile_status_value: "Disponível para novas missões",
 
       missions_title: "PROJETOS // MISSÕES",
       mission1_title: "Sistema de Portfólio",
@@ -119,6 +122,10 @@ document.addEventListener("DOMContentLoaded", () => {
       profile_class: "CLASS:",
       profile_location: "LOCATION:",
       profile_status: "STATUS:",
+
+      profile_class_value: "Full Stack Developer",
+      profile_location_value: "Brazil",
+      profile_status_value: "Available for new missions",
 
       missions_title: "PROJECTS // MISSIONS",
       mission1_title: "Portfolio System",
