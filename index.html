@@ -1,238 +1,232 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber Porftfólio</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cyber Porftfólio</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;400;700&display=swap"
-    rel="stylesheet" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css?v=1.1" />
+  </head>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css?v=1.1" />
-</head>
-
-<body>
-  <!-- =========================
-       LOADING / CARREGADOR
-  ========================== -->
-  <div id="carregador">
-    <div class="glitch" data-key="loading_text" data-text="Inicializando Sistema CyberDev...">
-      Inicializando Sistema CyberDev...
-    </div>
-
-    <div class="barra-progresso">
-      <div class="progresso"></div>
-    </div>
-  </div>
-
-  <!-- =========================
-       CONTEÚDO PRINCIPAL
-  ========================== -->
-  <div id="conteudo-principal" style="display: none;">
-    <!-- Header / Navegação -->
-    <header>
-      <nav>
-        <a href="#inicio" class="link-navegacao" data-key="nav_panel">[ Inicio ]</a>
-        <a href="#perfil" class="link-navegacao" data-key="nav_profile">[ Perfil ]</a>
-        <a href="#missoes" class="link-navegacao" data-key="nav_missions">[ Missões ]</a>
-        <a href="#formacao" class="link-navegacao" data-key="nav_education">[ Formação ]</a>
-        <a href="#contato" class="link-navegacao" data-key="nav_contact">[ Contato ]</a>
-      </nav>
-
-      <div class="controles-interface">
-        <button id="btn-tema">[<span data-key="theme_button">Tema</span>]</button>
-        <button id="btn-idioma">[PT/EN]</button>
+  <body>
+    <!-- Loader inicial -->
+    <div id="carregador">
+      <div
+        class="glitch"
+        data-key="loading_text"
+        data-text="Inicializando Sistema CyberDev..."
+      >
+        Inicializando Sistema CyberDev...
       </div>
-    </header>
 
-    <!-- Main -->
-    <main>
-      <!-- Início -->
-      <section id="inicio">
-        <div class="caixa-hud">
-          <div class="hud-elemento-animado hud-canto-se"></div>
-          <div class="hud-elemento-animado hud-canto-sd"></div>
-          <div class="hud-elemento-animado hud-canto-ie"></div>
-          <div class="hud-elemento-animado hud-canto-id"></div>
+      <div class="barra-progresso">
+        <div class="progresso"></div>
+      </div>
+    </div>
 
-          <h1 class="glitch" data-key="main_title" data-text="Desenvolvedor Full-Stack">
-            Desenvolvedor Full-Stack
-          </h1>
+    <!-- Conteúdo principal -->
+    <div id="conteudo-principal" style="display: none">
+      <header>
+        <nav>
+          <a href="#inicio" class="link-navegacao" data-key="nav_panel">[ Inicio ]</a>
+          <a href="#perfil" class="link-navegacao" data-key="nav_profile">[ Perfil ]</a>
+          <a href="#missoes" class="link-navegacao" data-key="nav_missions">[ Missões ]</a>
+          <a href="#formacao" class="link-navegacao" data-key="nav_education">[ Formação ]</a>
+          <a href="#contato" class="link-navegacao" data-key="nav_contact">[ Contato ]</a>
+        </nav>
 
-          <a href="#perfil" class="botao-acao" data-key="access_button">
-            ACESSAR SISTEMA
-          </a>
+        <div class="controles-interface">
+          <button id="btn-tema">[<span data-key="theme_button">Tema</span>]</button>
+          <button id="btn-idioma">[PT/EN]</button>
         </div>
-      </section>
+      </header>
 
-      <!-- Perfil -->
-      <section id="perfil">
-        <h2 data-key="profile_title">PERFIL DE USUÁRIO</h2>
+      <main>
+        <!-- Início -->
+        <section id="inicio">
+          <div class="caixa-hud">
+            <div class="hud-elemento-animado hud-canto-se"></div>
+            <div class="hud-elemento-animado hud-canto-sd"></div>
+            <div class="hud-elemento-animado hud-canto-ie"></div>
+            <div class="hud-elemento-animado hud-canto-id"></div>
 
-        <div class="cartao-perfil cartao-interativo">
-          <p><span class="rotulo" data-key="profile_user">USUÁRIO:</span> Magdiel Paulo</p>
+            <h1 class="glitch" data-key="main_title" data-text="Desenvolvedor Full-Stack">
+              Desenvolvedor Full-Stack
+            </h1>
 
-          <p>
-            <span class="rotulo" data-key="profile_class">CLASSE:</span>
-            <span data-key="profile_class_value">Desenvolvedor Full Stack</span>
-          </p>
-
-          <p>
-            <span class="rotulo" data-key="profile_location">LOCAL:</span>
-            <span data-key="profile_location_value">Brasil</span>
-          </p>
-
-          <p>
-            <span class="rotulo" data-key="profile_status">STATUS:</span>
-            <span data-key="profile_status_value">Disponível para novas missões</span>
-          </p>
-        </div>
-      </section>
-
-      <!-- Missões -->
-      <section id="missoes">
-        <h2 data-key="missions_title">PROJETOS // MISSÕES</h2>
-
-        <div class="grade-missoes">
-          <div class="cartao-missao cartao-interativo" data-modal="modal-1">
-            <h3>MISSÃO 01</h3>
-            <p data-key="mission1_title">Portfólio</p>
+            <a href="#perfil" class="botao-acao" data-key="access_button">
+              ACESSAR SISTEMA
+            </a>
           </div>
+        </section>
 
-          <div class="cartao-missao cartao-interativo" data-modal="modal-2">
-            <h3>MISSÃO 02</h3>
-            <p data-key="mission2_title">???</p>
+        <!-- Perfil -->
+        <section id="perfil">
+          <h2 data-key="profile_title">PERFIL DE USUÁRIO</h2>
+
+          <div class="cartao-perfil cartao-interativo">
+            <p><span class="rotulo" data-key="profile_user">USUÁRIO:</span> Magdiel Paulo</p>
+
+            <p>
+              <span class="rotulo" data-key="profile_class">CLASSE:</span>
+              <span data-key="profile_class_value">Desenvolvedor Full Stack</span>
+            </p>
+
+            <p>
+              <span class="rotulo" data-key="profile_location">LOCAL:</span>
+              <span data-key="profile_location_value">Brasil</span>
+            </p>
+
+            <p>
+              <span class="rotulo" data-key="profile_status">STATUS:</span>
+              <span data-key="profile_status_value">Disponível para novas missões</span>
+            </p>
           </div>
+        </section>
 
-          <div class="cartao-missao cartao-interativo" data-modal="modal-3">
-            <h3>MISSÃO 03</h3>
-            <p>???</p>
-          </div>
+        <!-- Missões -->
+        <section id="missoes">
+          <h2 data-key="missions_title">PROJETOS // MISSÕES</h2>
 
-          <div class="cartao-missao cartao-interativo" data-modal="modal-4">
-            <h3>MISSÃO 04</h3>
-            <p data-key="mission4_title">???</p>
-          </div>
-
-          <div class="cartao-missao cartao-interativo" data-modal="modal-5">
-            <h3>MISSÃO 05</h3>
-            <p data-key="mission5_title">???</p>
-          </div>
-
-          <div class="cartao-missao cartao-interativo" data-modal="modal-6">
-            <h3>MISSÃO 06</h3>
-            <p data-key="mission6_title">???</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Formação -->
-      <section id="formacao">
-        <h2 data-key="education_title">FORMAÇÃO ACADÊMICA</h2>
-
-        <div class="cartao-formacao cartao-interativo">
-          <h3 data-key="education_degree1_title">Bacharelado em Ciência da Computação</h3>
-          <p data-key="education_degree1_inst">Centro Universitário de Maceió – UNIMA | AFYA</p>
-          <p data-key="education_degree1_period">2019 – 2023</p>
-        </div>
-
-        <div class="cartao-formacao cartao-interativo">
-          <h3 data-key="education_degree2_title">Pós-graduação Lato Sensu – Especialização em Desenvolvimento Full Stack
-          </h3>
-          <p data-key="education_degree2_inst">Centro Universitário União das Américas Descomplica</p>
-          <p data-key="education_degree2_period">Janeiro/2026 – Abril/2026 (em andamento)</p>
-        </div>
-      </section>
-
-
-
-      <!-- Contato -->
-      <section id="contato">
-        <h2 data-key="contact_title">CONTATO</h2>
-
-        <div class="terminal cartao-interativo">
-          <div class="cabecalho-terminal">C:\Usuários\CyberDev></div>
-
-          <div class="corpo-terminal">
-            <p data-key="contact_command1">&gt; executar_contato.exe</p>
-            <p data-key="contact_links_established">&gt; Conexões diretas estabelecidas:</p>
-
-            <div class="links-contato">
-              <a href="https://github.com/MagdielPaulo" target="_blank">[ GitHub ]</a>
-              <a href="https://www.linkedin.com/in/magdiel-paulo/" target="_blank">[ LinkedIn ]</a>
+          <div class="grade-missoes">
+            <div class="cartao-missao cartao-interativo" data-modal="modal-1">
+              <h3>MISSÃO 01</h3>
+              <p data-key="mission1_title">Portfólio</p>
             </div>
 
-            <p data-key="contact_connection_terminated">&gt; Conexão terminada.</p>
+            <div class="cartao-missao cartao-interativo" data-modal="modal-2">
+              <h3>MISSÃO 02</h3>
+              <p data-key="mission2_title">???</p>
+            </div>
+
+            <div class="cartao-missao cartao-interativo" data-modal="modal-3">
+              <h3>MISSÃO 03</h3>
+              <p>???</p>
+            </div>
+
+            <div class="cartao-missao cartao-interativo" data-modal="modal-4">
+              <h3>MISSÃO 04</h3>
+              <p data-key="mission4_title">???</p>
+            </div>
+
+            <div class="cartao-missao cartao-interativo" data-modal="modal-5">
+              <h3>MISSÃO 05</h3>
+              <p data-key="mission5_title">???</p>
+            </div>
+
+            <div class="cartao-missao cartao-interativo" data-modal="modal-6">
+              <h3>MISSÃO 06</h3>
+              <p data-key="mission6_title">???</p>
+            </div>
           </div>
-        </div>
-      </section>
-    </main>
-  </div>
+        </section>
 
-  <!-- =========================
-       MODAIS (MISSÕES)
-  ========================== -->
-  <div id="modal-1" class="modal">
-  <div class="conteudo-modal">
-    <span class="botao-fechar">&times;</span>
-    <h3 data-key="mission1_modal_title">MISSÃO 01: Portfólio</h3>
-    <p data-key="mission1_modal_desc">
-      Este próprio sistema um portfólio interativo com tema retrowave construído com HTML, CSS e JavaScript puros para exibir meu portfólio de habilidades e projetos.
-    </p>
-    <a href="https://github.com/MagdielPaulo/portfolio" target="_blank" class="btn-missao">
-       <span data-key="btn_view_project">VER REPOSITÓRIO</span>
-    </a>
-  </div>
-</div>
+        <!-- Formação -->
+        <section id="formacao">
+          <h2 data-key="education_title">FORMAÇÃO ACADÊMICA</h2>
 
-<div id="modal-2" class="modal">
-  <div class="conteudo-modal">
-    <span class="botao-fechar">&times;</span>
-    <h3 data-key="mission2_modal_title">MISSÃO 02: ???</h3>
-    <p data-key="mission2_modal_desc">[...]</p>
-  </div>
-</div>
+          <div class="cartao-formacao cartao-interativo">
+            <h3 data-key="education_degree1_title">Bacharelado em Ciência da Computação</h3>
+            <p data-key="education_degree1_inst">Centro Universitário de Maceió – UNIMA | AFYA</p>
+            <p data-key="education_degree1_period">2019 – 2023</p>
+          </div>
 
-<div id="modal-3" class="modal">
-  <div class="conteudo-modal">
-    <span class="botao-fechar">&times;</span>
-    <h3 data-key="mission3_modal_title">MISSÃO 03: ???</h3>
-    <p data-key="mission3_modal_desc">[...]</p>
-  </div>
-</div>
+          <div class="cartao-formacao cartao-interativo">
+            <h3 data-key="education_degree2_title">
+              Pós-graduação Lato Sensu – Especialização em Desenvolvimento Full Stack
+            </h3>
+            <p data-key="education_degree2_inst">Centro Universitário União das Américas Descomplica</p>
+            <p data-key="education_degree2_period">Janeiro/2026 – Abril/2026 (em andamento)</p>
+          </div>
+        </section>
 
-<div id="modal-4" class="modal">
-  <div class="conteudo-modal">
-    <span class="botao-fechar">&times;</span>
-    <h3 data-key="mission4_modal_title">MISSÃO 04: ???</h3>
-    <p data-key="mission4_modal_desc">[...]</p>
-  </div>
-</div>
+        <!-- Contato -->
+        <section id="contato">
+          <h2 data-key="contact_title">CONTATO</h2>
 
-<div id="modal-5" class="modal">
-  <div class="conteudo-modal">
-    <span class="botao-fechar">&times;</span>
-    <h3 data-key="mission5_modal_title">MISSÃO 05: ???</h3>
-    <p data-key="mission5_modal_desc">[...]</p>
-  </div>
-</div>
+          <div class="terminal cartao-interativo">
+            <div class="cabecalho-terminal">C:\Usuários\CyberDev></div>
 
-<div id="modal-6" class="modal">
-  <div class="conteudo-modal">
-    <span class="botao-fechar">&times;</span>
-    <h3 data-key="mission6_modal_title">MISSÃO 06: ???</h3>
-    <p data-key="mission6_modal_desc">[...]</p>
-  </div>
-</div>
+            <div class="corpo-terminal">
+              <p data-key="contact_command1">&gt; executar_contato.exe</p>
+              <p data-key="contact_links_established">&gt; Conexões diretas estabelecidas:</p>
 
-  <!-- Scripts -->
-  <script src="script.js"></script>
-</body>
+              <div class="links-contato">
+                <a href="https://github.com/MagdielPaulo" target="_blank">[ GitHub ]</a>
+                <a href="https://www.linkedin.com/in/magdiel-paulo/" target="_blank">[ LinkedIn ]</a>
+              </div>
 
+              <p data-key="contact_connection_terminated">&gt; Conexão terminada.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Modais -->
+    <div id="modal-1" class="modal">
+      <div class="conteudo-modal">
+        <span class="botao-fechar">&times;</span>
+        <h3 data-key="mission1_modal_title">MISSÃO 01: Portfólio</h3>
+        <p data-key="mission1_modal_desc">
+          Este próprio sistema um portfólio interativo com tema retrowave construído com HTML, CSS e
+          JavaScript puros para exibir meu portfólio de habilidades e projetos.
+        </p>
+        <a href="https://github.com/MagdielPaulo/portfolio" target="_blank" class="btn-missao">
+          <span data-key="btn_view_project">VER REPOSITÓRIO</span>
+        </a>
+      </div>
+    </div>
+
+    <div id="modal-2" class="modal">
+      <div class="conteudo-modal">
+        <span class="botao-fechar">&times;</span>
+        <h3 data-key="mission2_modal_title">MISSÃO 02: ???</h3>
+        <p data-key="mission2_modal_desc">[...]</p>
+      </div>
+    </div>
+
+    <div id="modal-3" class="modal">
+      <div class="conteudo-modal">
+        <span class="botao-fechar">&times;</span>
+        <h3 data-key="mission3_modal_title">MISSÃO 03: ???</h3>
+        <p data-key="mission3_modal_desc">[...]</p>
+      </div>
+    </div>
+
+    <div id="modal-4" class="modal">
+      <div class="conteudo-modal">
+        <span class="botao-fechar">&times;</span>
+        <h3 data-key="mission4_modal_title">MISSÃO 04: ???</h3>
+        <p data-key="mission4_modal_desc">[...]</p>
+      </div>
+    </div>
+
+    <div id="modal-5" class="modal">
+      <div class="conteudo-modal">
+        <span class="botao-fechar">&times;</span>
+        <h3 data-key="mission5_modal_title">MISSÃO 05: ???</h3>
+        <p data-key="mission5_modal_desc">[...]</p>
+      </div>
+    </div>
+
+    <div id="modal-6" class="modal">
+      <div class="conteudo-modal">
+        <span class="botao-fechar">&times;</span>
+        <h3 data-key="mission6_modal_title">MISSÃO 06: ???</h3>
+        <p data-key="mission6_modal_desc">[...]</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

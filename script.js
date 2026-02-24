@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // =========================
-  // 1) LOADER (progresso fake) + liberação do conteúdo
-  // =========================
+  // 1) LOADER
   const carregador = document.getElementById("carregador");
   const conteudoPrincipal = document.getElementById("conteudo-principal");
   const progresso = document.querySelector(".progresso");
@@ -20,18 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
     progresso.style.width = `${largura}%`;
   }, 15);
 
-  // =========================
-  // 2) TEMA (claro/escuro) + persistência (localStorage)
-  // =========================
+  // 2) TEMA (claro/escuro)
   const body = document.body;
   const btnTema = document.getElementById("btn-tema");
 
   function aplicarTema(tema) {
-    if (tema === "claro") {
-      body.classList.add("tema-claro");
-    } else {
-      body.classList.remove("tema-claro");
-    }
+    if (tema === "claro") body.classList.add("tema-claro");
+    else body.classList.remove("tema-claro");
 
     localStorage.setItem("temaPreferido", tema);
   }
@@ -44,12 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const temaSalvo = localStorage.getItem("temaPreferido");
   if (temaSalvo) aplicarTema(temaSalvo);
 
-  // =========================
-  // 3) IDIOMA (PT/EN) + persistência (localStorage)
-  // Regras:
-  // - Elementos traduzíveis precisam de [data-key]
-  // - Se o elemento tiver .glitch, também atualiza data-text
-  // =========================
+  // 3) IDIOMA (PT/EN)
   const btnIdioma = document.getElementById("btn-idioma");
 
   const traducoes = {
@@ -188,12 +176,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("[data-key]").forEach((el) => {
       const key = el.getAttribute("data-key");
       const texto = traducoes[idioma]?.[key];
-
       if (!texto) return;
 
       el.innerText = texto;
 
-      // O efeito glitch usa data-text como fonte do conteúdo duplicado
       if (el.classList.contains("glitch")) {
         el.dataset.text = texto;
       }
@@ -211,9 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const idiomaSalvo = localStorage.getItem("idiomaPreferido");
   if (idiomaSalvo) traduzirPagina(idiomaSalvo);
 
-  // =========================
-  // 4) EFEITO 3D (hover) em .cartao-interativo
-  // =========================
+  // 4) EFEITO 3D NOS CARTÕES
   const cartoes = document.querySelectorAll(".cartao-interativo");
 
   cartoes.forEach((cartao) => {
@@ -235,9 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // =========================
-  // 5) MODAIS (cards de missão -> abre modal correspondente)
-  // =========================
+  // 5) MODAIS
   const cartoesMissao = document.querySelectorAll(".cartao-missao");
   const modais = document.querySelectorAll(".modal");
   const botoesFechar = document.querySelectorAll(".botao-fechar");
@@ -261,9 +243,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("click", (evento) => {
     modais.forEach((modal) => {
-      if (evento.target === modal) {
-        modal.style.display = "none";
-      }
+      if (evento.target === modal) modal.style.display = "none";
     });
   });
+
+  // 6) ATIVAR BACKGROUND “VIVO” DA SEÇÃO ATUAL (efeito acordar)
+  const secoes = document.querySelectorAll("main section");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("ativa", entry.isIntersecting);
+      });
+    },
+    { threshold: 0.55 }
+  );
+
+  secoes.forEach((sec) => observer.observe(sec));
 });
