@@ -87,13 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
       education_degree2_inst: "Centro Universitário União das Américas Descomplica",
       education_degree2_period: "Janeiro/2026 – Abril/2026 (em andamento)",
 
-      about_title: "SOBRE MIM",
-      about_desc:
-        "Fora do universo do código, sou um entusiasta de cultura pop, games e animes. Acredito que a criatividade desses mundos inspira soluções inovadoras na tecnologia.",
-      about_steam_title: "Perfil Steam",
-      about_games_title: "Jogos Favoritos",
-      about_animes_title: "Animes Favoritos",
-      about_music_title: "MÚSICA PREFERIDA",
 
       contact_title: "CONTATO",
       contact_command1: "> executar_contato.exe",
@@ -143,15 +136,8 @@ document.addEventListener("DOMContentLoaded", () => {
       education_degree2_inst: "União das Américas Descomplica University Center",
       education_degree2_period: "Jan/2026 – Apr/2026 (in progress)",
 
-      about_title: "ABOUT ME",
-      about_desc:
-        "Outside the code universe, I am a pop culture, games, and anime enthusiast.",
-      about_steam_title: "Steam Profile",
-      about_games_title: "Favorite Games",
-      about_animes_title: "Favorite Anime",
-      about_music_title: "FAVORITE MUSIC",
 
-      contact_title: "HACKER CONTACT",
+      contact_title: "CONTACT",
       contact_command1: "> run_contact.exe",
       contact_links_established: "> Direct connections established:",
       contact_connection_terminated: "> Connection terminated.",
