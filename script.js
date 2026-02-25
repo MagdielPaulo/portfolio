@@ -84,7 +84,7 @@ const init = () => {
       contact_links_established: "> Conexões diretas estabelecidas:",
       contact_connection_terminated: "> Conexão terminada.",
       mission1_modal_title: "MISSÃO 01: Portfólio",
-      mission1_modal_desc: "Este próprio sistema um portfólio interativo com tema retrowave construído com HTML, CSS e JavaScript puros para exibir meu portfólio de habilidades e projetos.",
+      mission1_modal_desc: "Um próprio sistema portfólio interativo com tema retrowave construído com HTML, CSS3 Avançado com Tailwind eJavaScript e Vite para exibir meu portfólio de habilidades e projetos.",
       mission2_modal_title: "MISSÃO 02: ???",
       mission2_modal_desc: "[...]",
       mission3_modal_title: "MISSÃO 03: ???",
@@ -136,7 +136,7 @@ const init = () => {
       contact_links_established: "> Direct connections established:",
       contact_connection_terminated: "> Connection terminated.",
       mission1_modal_title: "MISSION 01: Portfolio",
-      mission1_modal_desc: "This very system, an interactive retrowave-themed portfolio built with pure HTML, CSS, and JavaScript to showcase my skills and projects.",
+      mission1_modal_desc: "My own interactive portfolio system with a retrowave theme, built with HTML, CSS3 Advanced with Tailwind and JavaScript and Vite to showcase my portfolio of skills and projects.",
       mission2_modal_title: "MISSION 02: ???",
       mission2_modal_desc: "[...]",
       mission3_modal_title: "MISSION 03: ???",
@@ -243,7 +243,7 @@ const init = () => {
 
 // Inicialização segura para Vite
 if (document.readyState === "complete" || document.readyState === "interactive") {
-    init();
+  init();
 } else {
-    document.addEventListener("DOMContentLoaded", init);
+  document.addEventListener("DOMContentLoaded", init);
 }
