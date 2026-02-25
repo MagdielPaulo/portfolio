@@ -1,6 +1,6 @@
-// Garantimos que o código rode tanto em carregamento normal quanto em módulos Vite
+
 const init = () => {
-  // 1) LOADER
+ 
   const carregador = document.getElementById("carregador");
   const conteudoPrincipal = document.getElementById("conteudo-principal");
   const progresso = document.querySelector(".progresso");
@@ -19,7 +19,7 @@ const init = () => {
     if (progresso) progresso.style.width = `${largura}%`;
   }, 15);
 
-  // 2) TEMA (claro/escuro)
+ 
   const body = document.body;
   const btnTema = document.getElementById("btn-tema");
 
@@ -40,7 +40,7 @@ const init = () => {
   const temaSalvo = localStorage.getItem("temaPreferido");
   if (temaSalvo) aplicarTema(temaSalvo);
 
-  // 3) IDIOMA (PT/EN)
+ 
   const btnIdioma = document.getElementById("btn-idioma");
 
   const traducoes = {
@@ -177,7 +177,7 @@ const init = () => {
   const idiomaSalvo = localStorage.getItem("idiomaPreferido");
   if (idiomaSalvo) traduzirPagina(idiomaSalvo);
 
-  // 4) EFEITO 3D NOS CARTÕES
+  
   const cartoes = document.querySelectorAll(".cartao-interativo");
 
   cartoes.forEach((cartao) => {
@@ -198,7 +198,7 @@ const init = () => {
     });
   });
 
-  // 5) MODAIS
+  
   const cartoesMissao = document.querySelectorAll(".cartao-missao");
   const modais = document.querySelectorAll(".modal");
   const botoesFechar = document.querySelectorAll(".botao-fechar");
@@ -226,7 +226,7 @@ const init = () => {
     });
   });
 
-  // 6) ATIVAR BACKGROUND “VIVO”
+  
   const secoes = document.querySelectorAll("main section");
 
   const observer = new IntersectionObserver(
@@ -241,7 +241,7 @@ const init = () => {
   secoes.forEach((sec) => observer.observe(sec));
 };
 
-// Inicialização segura para Vite
+
 if (document.readyState === "complete" || document.readyState === "interactive") {
   init();
 } else {
