@@ -3,7 +3,7 @@ import { defineConfig, loadEnv } from 'vite';
 import path from 'path';
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), ''); // Use process.cwd() para garantir o caminho
+  const env = loadEnv(mode, process.cwd(), ''); 
   
   return {
     plugins: [tailwindcss()],
