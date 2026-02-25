@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Este é um projeto de portfólio pessoal gamificado com tema cyberpunk / RetroWave, criado por mim. A interface é inspirada em elementos de ficção científica, como *Cyberpunk 2077*, e apresenta uma estética focada em efeitos de neon, glitch e HUD (Heads-Up Display).
+Este é um projeto de portfólio pessoal gamificado com tema cyberpunk / RetroWave, criado por mim. A interface é inspirada em elementos de ficção científica, e apresenta uma estética focada em efeitos de neon, glitch e HUD (Heads-Up Display).
 
 Originalmente concebido em HTML puro, o projeto foi evoluído para uma estrutura moderna utilizando **Vite** e **Tailwind CSS v4**, garantindo performance máxima e um deploy otimizado no Vercel.
 
