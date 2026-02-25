@@ -1,8 +1,4 @@
-/* =========================================================
-   CYBER PORTFÓLIO — CSS (com backgrounds vivos por seção)
-========================================================= */
 
-/* 01) VARIÁVEIS / TEMAS */
 :root {
   --cor-fundo: #0d031a;
   --cor-texto-principal: #fff;
@@ -33,7 +29,6 @@ body.tema-claro {
   --gradiente-fundo: linear-gradient(45deg, #f4f4f9, #e0e0eb, #f4f4f9);
 }
 
-/* 02) RESET / BASE */
 * {
   margin: 0;
   padding: 0;
@@ -61,7 +56,6 @@ body.tema-claro {
   background-image: none;
 }
 
-/* 03) SEÇÕES + FUNDO VIVO (NEBULOSA + GRID + SCANLINES) */
 section {
   min-height: 100vh;
   display: flex;
@@ -74,12 +68,11 @@ section {
   padding: 40px 20px;
   text-align: center;
 
-  /* padrão (cada seção sobrescreve) */
+
   --bg1: rgba(255, 0, 255, 0.22);
   --bg2: rgba(106, 0, 255, 0.18);
   --bg3: rgba(0, 255, 255, 0.18);
 
-  /* “ritmo” do fundo (cada seção pode mudar) */
   --meshDur: 15s;
   --meshBlur: 60px;
   --meshOpacity: 0.42;
@@ -91,7 +84,7 @@ section > * {
   z-index: 1;
 }
 
-/* Nebulosa animada */
+
 section::before {
   content: "";
   position: absolute;
@@ -106,7 +99,7 @@ section::before {
   background-size: 220% 220%;
   animation: meshMove var(--meshDur, 15s) ease-in-out infinite alternate;
 
-  /* “acorda” com a classe .ativa (JS) */
+  
   opacity: 0.18;
   filter: blur(var(--meshBlur, 60px));
   transition: opacity 0.8s ease, filter 0.8s ease;
@@ -116,7 +109,7 @@ section.ativa::before {
   opacity: var(--meshOpacity, 0.42);
 }
 
-/* Grid + scanlines + vinheta */
+
 section::after {
   content: "";
   position: absolute;
@@ -144,7 +137,7 @@ section::after {
   animation: scanMove 6s linear infinite;
 }
 
-/* Tema claro (fica mais suave) */
+
 body.tema-claro section::before {
   filter: blur(100px);
 }
@@ -167,7 +160,7 @@ body.tema-claro section::after {
     );
 }
 
-/* Títulos */
+
 section h2 {
   font-family: var(--fonte-primaria);
   font-size: 2.5rem;
@@ -175,7 +168,7 @@ section h2 {
   animation: flicker 3s linear infinite;
 }
 
-/* 04) CORES + RITMO POR SEÇÃO */
+
 #inicio {
   --bg1: rgba(255, 0, 255, 0.28);
   --bg2: rgba(106, 0, 255, 0.22);
@@ -221,7 +214,7 @@ section h2 {
   --gridOpacity: 0.16;
 }
 
-/* 05) ANIMAÇÕES */
+
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -264,7 +257,7 @@ body.tema-claro section h2 {
   color: var(--cor-texto-principal);
 }
 
-/* 06) GLITCH */
+
 .glitch { position: relative; animation: flicker 2s linear infinite; }
 
 .glitch::before,
@@ -305,7 +298,7 @@ body.tema-claro section h2 {
   75% { clip-path: inset(10% 0 85% 0); }
 }
 
-/* 07) LOADER */
+
 #carregador {
   display: flex;
   flex-direction: column;
@@ -334,7 +327,7 @@ body.tema-claro section h2 {
   transition: width 0.1s linear;
 }
 
-/* 08) HEADER / NAV */
+
 header {
   position: fixed;
   top: 0;
@@ -411,7 +404,7 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-/* Botão do modal */
+
 .btn-missao {
   display: inline-block;
   margin-top: 20px;
@@ -432,7 +425,7 @@ nav a:hover {
   box-shadow: 0 0 15px #ff00ff;
 }
 
-/* 09) CARDS / COMPONENTES */
+
 .cartao-interativo { transition: transform 0.1s ease; transform-style: preserve-3d; }
 
 .cartao-perfil,
@@ -448,7 +441,7 @@ nav a:hover {
   transition: background-color 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Tema claro — glass */
+
 body.tema-claro .cartao-perfil,
 body.tema-claro .cartao-missao,
 body.tema-claro .terminal,
@@ -476,7 +469,7 @@ body.tema-claro .cartao-perfil .rotulo {
 
 body.tema-claro #inicio h1.glitch { text-shadow: 0 0 0 transparent; }
 
-/* 10) INÍCIO */
+
 .caixa-hud {
   border: 2px solid var(--cor-neon-1);
   padding: 40px;
@@ -511,7 +504,7 @@ body.tema-claro #inicio h1.glitch { text-shadow: 0 0 0 transparent; }
   box-shadow: 0 0 20px var(--cor-texto-destaque);
 }
 
-/* 11) PERFIL */
+
 .cartao-perfil p { font-size: 1.2rem; margin-bottom: 10px; }
 
 .cartao-perfil .rotulo {
@@ -520,7 +513,7 @@ body.tema-claro #inicio h1.glitch { text-shadow: 0 0 0 transparent; }
   animation: pulse 3s infinite;
 }
 
-/* 12) MISSÕES */
+
 .grade-missoes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -537,7 +530,7 @@ body.tema-claro #inicio h1.glitch { text-shadow: 0 0 0 transparent; }
   margin-bottom: 10px;
 }
 
-/* 13) FORMAÇÃO */
+
 .cartao-formacao { text-align: left; margin-bottom: 20px; }
 
 .cartao-formacao h3 {
@@ -547,7 +540,7 @@ body.tema-claro #inicio h1.glitch { text-shadow: 0 0 0 transparent; }
 
 .cartao-formacao p { margin-top: 6px; }
 
-/* 14) CONTATO */
+
 .terminal { text-align: left; font-family: "Courier New", Courier, monospace; }
 
 .cabecalho-terminal {
@@ -577,7 +570,7 @@ body.tema-claro #inicio h1.glitch { text-shadow: 0 0 0 transparent; }
   border-radius: 6px;
 }
 
-/* 15) MODAL */
+
 .modal {
   display: none;
   position: fixed;
