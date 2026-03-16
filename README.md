@@ -10,7 +10,7 @@ Portfólio pessoal moderno e minimalista, desenvolvido para apresentar minha tra
 
 | Dark Mode | Light Mode |
 |-----------|------------|
-| ![Dark](https://via.placeholder.com/480x280/09090b/a78bfa?text=Dark+Mode) | ![Light](https://via.placeholder.com/480x280/fafaf9/7c3aed?text=Light+Mode) |
+| ![Dark](https://smoggy-indigo-452eptcvnd.edgeone.app/image.png) | ![Light](https://radical-harlequin-0ox5upky5h.edgeone.app/image2.png) |
 
 > *Substitua as imagens acima por screenshots reais do projeto.*
 
