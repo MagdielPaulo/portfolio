@@ -1,7 +1,8 @@
-
+// =============================================
+// MAGDIEL PAULO — PORTFOLIO JS v2
+// =============================================
 (() => {
   "use strict";
-
 
   const i18n = {
     pt: {
@@ -30,7 +31,7 @@
       skills_heading: 'Stack <span class="accent">tecnológica</span>.',
       sk_lang: "Linguagens",
       sk_db: "Banco de Dados",
-      sk_agile: "Metodologias",
+      sk_tools: "Ferramentas",
       projects_tag: "03 // Projetos",
       projects_heading: 'Trabalhos <span class="accent">selecionados</span>.',
       proj1_name: "Portfólio Pessoal",
@@ -97,7 +98,7 @@
       skills_heading: 'Tech <span class="accent">stack</span>.',
       sk_lang: "Languages",
       sk_db: "Databases",
-      sk_agile: "Methodologies",
+      sk_tools: "Tools",
       projects_tag: "03 // Projects",
       projects_heading: 'Selected <span class="accent">works</span>.',
       proj1_name: "Personal Portfolio",
@@ -140,7 +141,6 @@
     },
   };
 
-  
   const htmlKeys = new Set([
     "hero_greeting", "hero_cta", "hero_contact",
     "about_heading", "skills_heading", "projects_heading",
@@ -151,17 +151,16 @@
   let lang = localStorage.getItem("lang") || "pt";
   let theme = localStorage.getItem("theme") || "dark";
 
-  
   function setLang(l) {
     lang = l;
     localStorage.setItem("lang", l);
-    const dict = i18n[l];
-    if (!dict) return;
+    const d = i18n[l];
+    if (!d) return;
     document.querySelectorAll("[data-key]").forEach((el) => {
       const k = el.dataset.key;
-      if (!dict[k]) return;
-      if (htmlKeys.has(k)) el.innerHTML = dict[k];
-      else el.textContent = dict[k];
+      if (!d[k]) return;
+      if (htmlKeys.has(k)) el.innerHTML = d[k];
+      else el.textContent = d[k];
     });
     document.documentElement.lang = l === "pt" ? "pt-BR" : "en";
   }
@@ -171,12 +170,9 @@
     localStorage.setItem("theme", t);
     document.body.classList.toggle("light", t === "light");
     const icon = document.getElementById("icon-theme");
-    if (icon) {
-      icon.className = t === "light" ? "bi bi-sun-fill" : "bi bi-moon-stars";
-    }
+    if (icon) icon.className = t === "light" ? "bi bi-sun-fill" : "bi bi-moon-stars";
   }
 
-  
   function initCursor() {
     const g = document.getElementById("cursorGlow");
     if (!g || matchMedia("(max-width:768px)").matches) return;
@@ -191,40 +187,27 @@
     })();
   }
 
-  
   function initHeader() {
     const h = document.getElementById("header");
     if (!h) return;
     let t = false;
     window.addEventListener("scroll", () => {
       if (!t) {
-        requestAnimationFrame(() => {
-          h.classList.toggle("scrolled", scrollY > 40);
-          t = false;
-        });
+        requestAnimationFrame(() => { h.classList.toggle("scrolled", scrollY > 40); t = false; });
         t = true;
       }
     });
   }
 
-  
   function initMobile() {
     const btn = document.getElementById("btn-menu");
     const nav = document.getElementById("mobile-nav");
     if (!btn || !nav) return;
-
-    function close() {
-      btn.classList.remove("open");
-      nav.classList.remove("open");
-      document.body.style.overflow = "";
-    }
-
+    const close = () => { btn.classList.remove("open"); nav.classList.remove("open"); document.body.style.overflow = ""; };
     btn.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
-      btn.classList.toggle("open");
-      document.body.style.overflow = open ? "hidden" : "";
+      const o = nav.classList.toggle("open"); btn.classList.toggle("open");
+      document.body.style.overflow = o ? "hidden" : "";
     });
-
     nav.querySelectorAll(".mobile-link").forEach((a) => a.addEventListener("click", close));
   }
 
@@ -232,14 +215,11 @@
     const els = document.querySelectorAll('[data-anim="up"]');
     if (!els.length) return;
     const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }
-      });
+      entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); } });
     }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
     els.forEach((el, i) => { el.style.transitionDelay = `${i * 0.06}s`; obs.observe(el); });
   }
 
- 
   function initAnchors() {
     document.querySelectorAll('a[href^="#"]').forEach((a) => {
       a.addEventListener("click", (ev) => {
@@ -249,7 +229,6 @@
     });
   }
 
- 
   function initActiveNav() {
     const sections = document.querySelectorAll("main .section, .hero");
     const links = document.querySelectorAll("#nav-desktop .nav-link");
@@ -257,12 +236,10 @@
       entries.forEach((e) => {
         if (e.isIntersecting) {
           const id = e.target.id;
-          links.forEach((l) => {
-            l.classList.toggle("active", l.getAttribute("href") === `#${id}`);
-          });
+          links.forEach((l) => l.classList.toggle("active", l.getAttribute("href") === `#${id}`));
         }
       });
-    }, { threshold: 0.35 });
+    }, { threshold: 0.3 });
     sections.forEach((s) => obs.observe(s));
   }
 
@@ -276,12 +253,8 @@
     initAnchors();
     initActiveNav();
 
-    document.getElementById("btn-tema")?.addEventListener("click", () => {
-      setTheme(theme === "dark" ? "light" : "dark");
-    });
-    document.getElementById("btn-idioma")?.addEventListener("click", () => {
-      setLang(lang === "pt" ? "en" : "pt");
-    });
+    document.getElementById("btn-tema")?.addEventListener("click", () => setTheme(theme === "dark" ? "light" : "dark"));
+    document.getElementById("btn-idioma")?.addEventListener("click", () => setLang(lang === "pt" ? "en" : "pt"));
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
