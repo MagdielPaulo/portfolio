@@ -1,5 +1,3 @@
-
-
 const i18n = {
   pt: {
     nav_about: "Sobre",
@@ -36,6 +34,8 @@ const i18n = {
     proj2_desc: "Calculadora interativa de Índice de Massa Corporal com classificação automática.",
     proj3_name: "Site de Viagens",
     proj3_desc: "Landing page de agência de viagens para prática de layout responsivo e front-end.",
+    proj4_name: "Chrono Timer",
+    proj4_desc: "Um cronômetro interativo de gerenciamento de tempo focado na produtividade.",
     exp_tag: "04 // Experiência",
     exp_heading: 'Trajetória <span class="accent">profissional</span>.',
     exp1_period: "1 ano e 4 meses",
@@ -103,6 +103,8 @@ const i18n = {
     proj2_desc: "Interactive Body Mass Index calculator with automatic classification.",
     proj3_name: "Travel Website",
     proj3_desc: "Travel agency landing page for responsive layout and front-end practice.",
+    proj4_name: "Chrono Timer",
+    proj4_desc: "An interactive time management stopwatch focused on productivity.",
     exp_tag: "04 // Experience",
     exp_heading: 'Professional <span class="accent">journey</span>.',
     exp1_period: "1 year 4 months",
@@ -113,7 +115,7 @@ const i18n = {
     exp2_desc: "Teaching applied computing, operating systems and productivity tools. Developing practical exercises and updating course materials.",
     exp3_period: "2 years",
     exp3_title: "IT Support Technician",
-    exp3_desc: "Technical support in corporate and educational environments, hardware maintenance, network configuration and technology infrastructure management.",
+    exp3_desc: "Technical support in corporate environments, hardware maintenance, network configuration and technology infrastructure management.",
     exp4_period: "2 years",
     exp4_title: "Administrative Assistant — IT",
     exp4_desc: "Developing internal solutions with HTML, CSS and JavaScript. Automating administrative processes, integrating data across departments and writing technical documentation.",
