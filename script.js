@@ -1,249 +1,289 @@
 
-const init = () => {
- 
-  const carregador = document.getElementById("carregador");
-  const conteudoPrincipal = document.getElementById("conteudo-principal");
-  const progresso = document.querySelector(".progresso");
+(() => {
+  "use strict";
 
-  let largura = 0;
 
-  const intervalo = setInterval(() => {
-    if (largura >= 100) {
-      clearInterval(intervalo);
-      if (carregador) carregador.style.display = "none";
-      if (conteudoPrincipal) conteudoPrincipal.style.display = "block";
-      return;
-    }
-
-    largura++;
-    if (progresso) progresso.style.width = `${largura}%`;
-  }, 15);
-
- 
-  const body = document.body;
-  const btnTema = document.getElementById("btn-tema");
-
-  function aplicarTema(tema) {
-    if (tema === "claro") body.classList.add("tema-claro");
-    else body.classList.remove("tema-claro");
-
-    localStorage.setItem("temaPreferido", tema);
-  }
-
-  if (btnTema) {
-    btnTema.addEventListener("click", () => {
-      const novoTema = body.classList.contains("tema-claro") ? "escuro" : "claro";
-      aplicarTema(novoTema);
-    });
-  }
-
-  const temaSalvo = localStorage.getItem("temaPreferido");
-  if (temaSalvo) aplicarTema(temaSalvo);
-
- 
-  const btnIdioma = document.getElementById("btn-idioma");
-
-  const traducoes = {
+  const i18n = {
     pt: {
-      loading_text: "Inicializando Sistema CyberDev...",
-      nav_panel: "[ Inicio ]",
-      nav_profile: "[ Perfil ]",
-      nav_missions: "[ Missões ]",
-      nav_education: "[ Formação ]",
-      nav_experience: "[ Experiência ]",
-      nav_about: "[ Sobre ]",
-      nav_contact: "[ Contato ]",
-      theme_button: "Tema",
-      main_title: "Desenvolvedor Full-Stack",
-      access_button: "ACESSAR SISTEMA",
-      profile_title: "PERFIL DE USUÁRIO",
-      profile_user: "USUÁRIO:",
-      profile_class: "CLASSE:",
-      profile_location: "LOCAL:",
-      profile_status: "STATUS:",
-      profile_class_value: "Desenvolvedor Full Stack",
-      profile_location_value: "Brasil",
-      profile_status_value: "Disponível para novas missões",
-      missions_title: "PROJETOS // MISSÕES",
-      mission1_title: "Sistema de Portfólio",
-      mission2_title: "Calculadora de IMC",
-      mission3_title: "???",
-      mission4_title: "???",
-      mission5_title: "???",
-      mission6_title: "???",
-      btn_view_project: "VER REPOSITÓRIO",
-      education_title: "FORMAÇÃO ACADÊMICA",
-      education_degree1_title: "Bacharelado em Ciência da Computação",
-      education_degree1_inst: "Centro Universitário de Maceió – UNIMA | AFYA",
-      education_degree1_period: "2019 – 2023",
-      education_degree2_title: "Pós-graduação Lato Sensu – Especialização em Desenvolvimento Full Stack",
-      education_degree2_inst: "Centro Universitário União das Américas Descomplica",
-      education_degree2_period: "Janeiro/2026 – Abril/2026 (em andamento)",
-      contact_title: "CONTATO",
-      contact_command1: "> executar_contato.exe",
-      contact_links_established: "> Conexões diretas estabelecidas:",
-      contact_connection_terminated: "> Conexão terminada.",
-      mission1_modal_title: "MISSÃO 01: Portfólio",
-      mission1_modal_desc: "Um próprio sistema portfólio interativo com tema retrowave construído com HTML, CSS3 Avançado com Tailwind eJavaScript e Vite para exibir meu portfólio de habilidades e projetos.",
-      mission2_modal_title: "MISSÃO 02: Calculadora de IMC",
-      mission2_modal_desc: "Uma calculadora de Índice de Massa Corporal (IMC) interativa para calcular e classificar o peso do usuário, desenvolvida com HTML, CSS e JavaScript.",
-      mission3_modal_title: "MISSÃO 03: ???",
-      mission3_modal_desc: "[...]",
-      mission4_modal_title: "MISSÃO 04: ???",
-      mission4_modal_desc: "[...]",
-      mission5_modal_title: "MISSÃO 05: ???",
-      mission5_modal_desc: "[...]",
-      mission6_modal_title: "MISSÃO 06: ???",
-      mission6_modal_desc: "[...]",
+      nav_about: "Sobre",
+      nav_skills: "Skills",
+      nav_projects: "Projetos",
+      nav_experience: "Experiência",
+      nav_education: "Formação",
+      nav_contact: "Contato",
+      hero_greeting: '<i class="bi bi-terminal-fill"></i> Olá, eu sou',
+      hero_role: "Desenvolvedor Full-Stack Júnior",
+      hero_bio: "Formado em Ciência da Computação, focado em construir aplicações web modernas e escaláveis com atenção a design e performance.",
+      hero_cta: '<i class="bi bi-rocket-takeoff"></i> Ver Projetos',
+      hero_contact: '<i class="bi bi-chat-dots"></i> Contato',
+      scroll_text: "scroll",
+      about_tag: "01 // Sobre mim",
+      about_heading: 'Transformando ideias em <span class="accent">soluções digitais</span>.',
+      about_p1: "Profissional com formação em Ciência da Computação e especialização em andamento em Desenvolvimento Full Stack. Experiência no desenvolvimento web com JavaScript, Python e Angular, além de construção de APIs REST e manipulação de bancos de dados SQL.",
+      about_p2: "Vivência prática no desenvolvimento de soluções tecnológicas, automação de processos administrativos e suporte a sistemas corporativos. Busco oportunidades para construir aplicações web escaláveis e melhorar sistemas existentes.",
+      info_name: "Nome",
+      info_location: "Localização",
+      info_location_val: "Maceió, AL — Brasil",
+      info_email: "E-mail",
+      info_status: "Disponível para projetos",
+      skills_tag: "02 // Competências",
+      skills_heading: 'Stack <span class="accent">tecnológica</span>.',
+      sk_lang: "Linguagens",
+      sk_db: "Banco de Dados",
+      sk_agile: "Metodologias",
+      projects_tag: "03 // Projetos",
+      projects_heading: 'Trabalhos <span class="accent">selecionados</span>.',
+      proj1_name: "Portfólio Pessoal",
+      proj1_desc: "Sistema portfólio interativo com tema retrowave — HTML, CSS, JavaScript, Vite.",
+      proj2_name: "Calculadora de IMC",
+      proj2_desc: "Calculadora interativa de Índice de Massa Corporal com classificação automática.",
+      proj3_name: "Site de Viagens",
+      proj3_desc: "Landing page de agência de viagens para prática de layout responsivo e front-end.",
+      exp_tag: "04 // Experiência",
+      exp_heading: 'Trajetória <span class="accent">profissional</span>.',
+      exp1_period: "1 ano e 4 meses",
+      exp1_title: "Professor Técnico em Informática",
+      exp1_desc: "Ensino de lógica de programação, algoritmos e fundamentos de desenvolvimento de software. Orientação de projetos de conclusão de curso e organização de feiras de tecnologia.",
+      exp2_period: "6 meses",
+      exp2_title: "Instrutor de Informática",
+      exp2_desc: "Ensino de informática aplicada, sistemas operacionais e ferramentas de produtividade. Desenvolvimento de exercícios práticos e atualização de materiais didáticos.",
+      exp3_period: "2 anos",
+      exp3_title: "Técnico de Suporte de TI",
+      exp3_desc: "Suporte técnico em ambientes corporativos e educacionais, manutenção de hardware, configuração de redes e administração de infraestrutura tecnológica.",
+      exp4_period: "2 anos",
+      exp4_title: "Assistente Administrativo — TI",
+      exp4_desc: "Desenvolvimento de soluções internas com HTML, CSS e JavaScript. Automação de processos administrativos, integração de dados entre setores e elaboração de documentação técnica.",
+      edu_tag: "05 // Formação",
+      edu_heading: 'Formação <span class="accent">acadêmica</span>.',
+      edu1_period: "2019 — 2023",
+      edu1_title: "Bacharelado em Ciência da Computação",
+      edu1_inst: "Centro Universitário de Maceió — UNIMA | AFYA",
+      edu2_period: "Jan/2026 — Abr/2026",
+      edu2_title: "Especialização em Desenvolvimento Full Stack",
+      edu2_inst: "Centro Universitário União das Américas Descomplica",
+      edu2_status: '<i class="bi bi-hourglass-split"></i> Em andamento',
+      cert_label: "Certificação",
+      cert_title: "AWS Cloud Practitioner",
+      cert_inst: "Escola da Nuvem — Programa de Capacitação em Nuvem",
+      cert_status: '<i class="bi bi-hourglass-split"></i> Em preparação',
+      contact_tag: "06 // Contato",
+      contact_heading: 'Vamos <span class="accent">trabalhar</span> juntos?',
+      contact_sub: "Aberto a novas oportunidades, freelance e projetos interessantes.",
+      footer_made: 'Feito com <i class="bi bi-heart-fill"></i> e muito código.',
     },
     en: {
-      loading_text: "Initializing CyberDev System...",
-      nav_panel: "[ Home ]",
-      nav_profile: "[ Profile ]",
-      nav_missions: "[ Missions ]",
-      nav_education: "[ Education ]",
-      nav_experience: "[ Experience ]",
-      nav_about: "[ About ]",
-      nav_contact: "[ Contact ]",
-      theme_button: "Theme",
-      main_title: "Full-Stack Developer",
-      access_button: "ACCESS SYSTEM",
-      profile_title: "USER PROFILE",
-      profile_user: "USER:",
-      profile_class: "CLASS:",
-      profile_location: "LOCATION:",
-      profile_status: "STATUS:",
-      profile_class_value: "Full Stack Developer",
-      profile_location_value: "Brazil",
-      profile_status_value: "Available for new missions",
-      missions_title: "PROJECTS // MISSIONS",
-      mission1_title: "Portfolio System",
-      mission2_title: "BMI Calculator",
-      mission3_title: "???",
-      mission4_title: "???",
-      mission5_title: "???",
-      mission6_title: "???",
-      btn_view_project: "VIEW REPOSITORY",
-      education_title: "ACADEMIC EDUCATION",
-      education_degree1_title: "Bachelor’s Degree in Computer Science",
-      education_degree1_inst: "Centro Universitário de Maceió – UNIMA | AFYA",
-      education_degree1_period: "2019 – 2023",
-      education_degree2_title: "Postgraduate (Lato Sensu) – Full Stack Development Specialization",
-      education_degree2_inst: "União das Américas Descomplica University Center",
-      education_degree2_period: "Jan/2026 – Apr/2026 (in progress)",
-      contact_title: "CONTACT",
-      contact_command1: "> run_contact.exe",
-      contact_links_established: "> Direct connections established:",
-      contact_connection_terminated: "> Connection terminated.",
-      mission1_modal_title: "MISSION 01: Portfolio",
-      mission1_modal_desc: "My own interactive portfolio system with a retrowave theme, built with HTML, CSS3 Advanced with Tailwind and JavaScript and Vite to showcase my portfolio of skills and projects.",
-      mission2_modal_title: "MISSION 02: BMI Calculator",
-      mission2_modal_desc: "An interactive Body Mass Index (BMI) calculator to calculate and classify the user's weight, developed with HTML, CSS, and JavaScript.",
-      mission3_modal_title: "MISSION 03: ???",
-      mission3_modal_desc: "[...]",
-      mission4_modal_title: "MISSION 04: ???",
-      mission4_modal_desc: "[...]",
-      mission5_modal_title: "MISSION 05: ???",
-      mission5_modal_desc: "[...]",
-      mission6_modal_title: "MISSION 06: ???",
-      mission6_modal_desc: "[...]",
+      nav_about: "About",
+      nav_skills: "Skills",
+      nav_projects: "Projects",
+      nav_experience: "Experience",
+      nav_education: "Education",
+      nav_contact: "Contact",
+      hero_greeting: '<i class="bi bi-terminal-fill"></i> Hi, I\'m',
+      hero_role: "Junior Full-Stack Developer",
+      hero_bio: "Computer Science graduate focused on building modern and scalable web applications with attention to design and performance.",
+      hero_cta: '<i class="bi bi-rocket-takeoff"></i> View Projects',
+      hero_contact: '<i class="bi bi-chat-dots"></i> Contact',
+      scroll_text: "scroll",
+      about_tag: "01 // About me",
+      about_heading: 'Turning ideas into <span class="accent">digital solutions</span>.',
+      about_p1: "Professional with a degree in Computer Science and an ongoing specialization in Full Stack Development. Experience in web development with JavaScript, Python and Angular, REST API construction and SQL database management.",
+      about_p2: "Hands-on experience in developing tech solutions, automating administrative processes and supporting corporate systems. Seeking opportunities to build scalable web applications and improve existing systems.",
+      info_name: "Name",
+      info_location: "Location",
+      info_location_val: "Maceió, AL — Brazil",
+      info_email: "Email",
+      info_status: "Available for projects",
+      skills_tag: "02 // Skills",
+      skills_heading: 'Tech <span class="accent">stack</span>.',
+      sk_lang: "Languages",
+      sk_db: "Databases",
+      sk_agile: "Methodologies",
+      projects_tag: "03 // Projects",
+      projects_heading: 'Selected <span class="accent">works</span>.',
+      proj1_name: "Personal Portfolio",
+      proj1_desc: "Interactive portfolio system with retrowave theme — HTML, CSS, JavaScript, Vite.",
+      proj2_name: "BMI Calculator",
+      proj2_desc: "Interactive Body Mass Index calculator with automatic classification.",
+      proj3_name: "Travel Website",
+      proj3_desc: "Travel agency landing page for responsive layout and front-end practice.",
+      exp_tag: "04 // Experience",
+      exp_heading: 'Professional <span class="accent">journey</span>.',
+      exp1_period: "1 year 4 months",
+      exp1_title: "IT Technical Instructor",
+      exp1_desc: "Teaching programming logic, algorithms and software development fundamentals. Mentoring final projects and organizing technology fairs.",
+      exp2_period: "6 months",
+      exp2_title: "Computer Science Instructor",
+      exp2_desc: "Teaching applied computing, operating systems and productivity tools. Developing practical exercises and updating course materials.",
+      exp3_period: "2 years",
+      exp3_title: "IT Support Technician",
+      exp3_desc: "Technical support in corporate and educational environments, hardware maintenance, network configuration and technology infrastructure management.",
+      exp4_period: "2 years",
+      exp4_title: "Administrative Assistant — IT",
+      exp4_desc: "Developing internal solutions with HTML, CSS and JavaScript. Automating administrative processes, integrating data across departments and writing technical documentation.",
+      edu_tag: "05 // Education",
+      edu_heading: 'Academic <span class="accent">education</span>.',
+      edu1_period: "2019 — 2023",
+      edu1_title: "Bachelor's in Computer Science",
+      edu1_inst: "Centro Universitário de Maceió — UNIMA | AFYA",
+      edu2_period: "Jan/2026 — Apr/2026",
+      edu2_title: "Full Stack Development Specialization",
+      edu2_inst: "União das Américas Descomplica University Center",
+      edu2_status: '<i class="bi bi-hourglass-split"></i> In progress',
+      cert_label: "Certification",
+      cert_title: "AWS Cloud Practitioner",
+      cert_inst: "Escola da Nuvem — Cloud Training Program",
+      cert_status: '<i class="bi bi-hourglass-split"></i> In preparation',
+      contact_tag: "06 // Contact",
+      contact_heading: 'Let\'s <span class="accent">work</span> together?',
+      contact_sub: "Open to new opportunities, freelance and interesting projects.",
+      footer_made: 'Made with <i class="bi bi-heart-fill"></i> and lots of code.',
     },
   };
 
-  function traduzirPagina(idioma) {
+  
+  const htmlKeys = new Set([
+    "hero_greeting", "hero_cta", "hero_contact",
+    "about_heading", "skills_heading", "projects_heading",
+    "exp_heading", "edu_heading", "edu2_status", "cert_status",
+    "contact_heading", "footer_made",
+  ]);
+
+  let lang = localStorage.getItem("lang") || "pt";
+  let theme = localStorage.getItem("theme") || "dark";
+
+  
+  function setLang(l) {
+    lang = l;
+    localStorage.setItem("lang", l);
+    const dict = i18n[l];
+    if (!dict) return;
     document.querySelectorAll("[data-key]").forEach((el) => {
-      const key = el.getAttribute("data-key");
-      const texto = traducoes[idioma]?.[key];
-      if (!texto) return;
+      const k = el.dataset.key;
+      if (!dict[k]) return;
+      if (htmlKeys.has(k)) el.innerHTML = dict[k];
+      else el.textContent = dict[k];
+    });
+    document.documentElement.lang = l === "pt" ? "pt-BR" : "en";
+  }
 
-      el.innerText = texto;
+  function setTheme(t) {
+    theme = t;
+    localStorage.setItem("theme", t);
+    document.body.classList.toggle("light", t === "light");
+    const icon = document.getElementById("icon-theme");
+    if (icon) {
+      icon.className = t === "light" ? "bi bi-sun-fill" : "bi bi-moon-stars";
+    }
+  }
 
-      if (el.classList.contains("glitch")) {
-        el.dataset.text = texto;
+  
+  function initCursor() {
+    const g = document.getElementById("cursorGlow");
+    if (!g || matchMedia("(max-width:768px)").matches) return;
+    let mx = 0, my = 0, cx = 0, cy = 0;
+    document.addEventListener("mousemove", (e) => { mx = e.clientX; my = e.clientY; });
+    (function loop() {
+      cx += (mx - cx) * 0.07;
+      cy += (my - cy) * 0.07;
+      g.style.left = cx + "px";
+      g.style.top = cy + "px";
+      requestAnimationFrame(loop);
+    })();
+  }
+
+  
+  function initHeader() {
+    const h = document.getElementById("header");
+    if (!h) return;
+    let t = false;
+    window.addEventListener("scroll", () => {
+      if (!t) {
+        requestAnimationFrame(() => {
+          h.classList.toggle("scrolled", scrollY > 40);
+          t = false;
+        });
+        t = true;
       }
     });
-
-    localStorage.setItem("idiomaPreferido", idioma);
   }
 
-  if (btnIdioma) {
-    btnIdioma.addEventListener("click", () => {
-      const idiomaAtual = localStorage.getItem("idiomaPreferido") || "pt";
-      const novoIdioma = idiomaAtual === "pt" ? "en" : "pt";
-      traduzirPagina(novoIdioma);
+  
+  function initMobile() {
+    const btn = document.getElementById("btn-menu");
+    const nav = document.getElementById("mobile-nav");
+    if (!btn || !nav) return;
+
+    function close() {
+      btn.classList.remove("open");
+      nav.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    btn.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      btn.classList.toggle("open");
+      document.body.style.overflow = open ? "hidden" : "";
     });
+
+    nav.querySelectorAll(".mobile-link").forEach((a) => a.addEventListener("click", close));
   }
 
-  const idiomaSalvo = localStorage.getItem("idiomaPreferido");
-  if (idiomaSalvo) traduzirPagina(idiomaSalvo);
-
-  
-  const cartoes = document.querySelectorAll(".cartao-interativo");
-
-  cartoes.forEach((cartao) => {
-    cartao.addEventListener("mousemove", (e) => {
-      const { left, top, width, height } = cartao.getBoundingClientRect();
-
-      const x = e.clientX - left - width / 2;
-      const y = e.clientY - top - height / 2;
-
-      const rotateX = (y / height) * -20;
-      const rotateY = (x / width) * 20;
-
-      cartao.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-    });
-
-    cartao.addEventListener("mouseleave", () => {
-      cartao.style.transform = "perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
-    });
-  });
-
-  
-  const cartoesMissao = document.querySelectorAll(".cartao-missao");
-  const modais = document.querySelectorAll(".modal");
-  const botoesFechar = document.querySelectorAll(".botao-fechar");
-
-  cartoesMissao.forEach((cartao) => {
-    cartao.addEventListener("click", () => {
-      const modalId = cartao.getAttribute("data-modal");
-      if (!modalId) return;
-
-      const modal = document.getElementById(modalId);
-      if (modal) modal.style.display = "block";
-    });
-  });
-
-  botoesFechar.forEach((botao) => {
-    botao.addEventListener("click", () => {
-      const modal = botao.closest(".modal");
-      if (modal) modal.style.display = "none";
-    });
-  });
-
-  window.addEventListener("click", (evento) => {
-    modais.forEach((modal) => {
-      if (evento.target === modal) modal.style.display = "none";
-    });
-  });
-
-  
-  const secoes = document.querySelectorAll("main section");
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        entry.target.classList.toggle("ativa", entry.isIntersecting);
+  function initReveal() {
+    const els = document.querySelectorAll('[data-anim="up"]');
+    if (!els.length) return;
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); }
       });
-    },
-    { threshold: 0.55 }
-  );
+    }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
+    els.forEach((el, i) => { el.style.transitionDelay = `${i * 0.06}s`; obs.observe(el); });
+  }
 
-  secoes.forEach((sec) => observer.observe(sec));
-};
+ 
+  function initAnchors() {
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener("click", (ev) => {
+        const t = document.querySelector(a.getAttribute("href"));
+        if (t) { ev.preventDefault(); t.scrollIntoView({ behavior: "smooth", block: "start" }); }
+      });
+    });
+  }
 
+ 
+  function initActiveNav() {
+    const sections = document.querySelectorAll("main .section, .hero");
+    const links = document.querySelectorAll("#nav-desktop .nav-link");
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          const id = e.target.id;
+          links.forEach((l) => {
+            l.classList.toggle("active", l.getAttribute("href") === `#${id}`);
+          });
+        }
+      });
+    }, { threshold: 0.35 });
+    sections.forEach((s) => obs.observe(s));
+  }
 
-if (document.readyState === "complete" || document.readyState === "interactive") {
-  init();
-} else {
-  document.addEventListener("DOMContentLoaded", init);
-}
+  function init() {
+    setTheme(theme);
+    setLang(lang);
+    initCursor();
+    initHeader();
+    initMobile();
+    initReveal();
+    initAnchors();
+    initActiveNav();
+
+    document.getElementById("btn-tema")?.addEventListener("click", () => {
+      setTheme(theme === "dark" ? "light" : "dark");
+    });
+    document.getElementById("btn-idioma")?.addEventListener("click", () => {
+      setLang(lang === "pt" ? "en" : "pt");
+    });
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
