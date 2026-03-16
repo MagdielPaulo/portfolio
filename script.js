@@ -1,6 +1,3 @@
-// =============================================
-// MAGDIEL PAULO — PORTFOLIO
-// =============================================
 
 const i18n = {
   pt: {
@@ -217,7 +214,7 @@ function initReveal() {
   const els = document.querySelectorAll('[data-anim="up"]');
   if (!els.length) return;
 
-  // Fallback: if IntersectionObserver isn't supported, show everything
+  
   if (!("IntersectionObserver" in window)) {
     els.forEach((el) => el.classList.add("visible"));
     return;
@@ -253,7 +250,7 @@ function initActiveNav() {
 }
 
 function init() {
-  // Signal CSS that JS is running — enables scroll animations
+  
   document.documentElement.classList.add("js-ready");
 
   setTheme(theme);
