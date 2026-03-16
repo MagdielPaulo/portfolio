@@ -216,9 +216,16 @@ function initMobile() {
 function initReveal() {
   const els = document.querySelectorAll('[data-anim="up"]');
   if (!els.length) return;
+
+  // Fallback: if IntersectionObserver isn't supported, show everything
+  if (!("IntersectionObserver" in window)) {
+    els.forEach((el) => el.classList.add("visible"));
+    return;
+  }
+
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
+  }, { threshold: 0.05, rootMargin: "0px 0px -10px 0px" });
   els.forEach((el, i) => { el.style.transitionDelay = `${i * 0.06}s`; obs.observe(el); });
 }
 
@@ -246,6 +253,9 @@ function initActiveNav() {
 }
 
 function init() {
+  // Signal CSS that JS is running — enables scroll animations
+  document.documentElement.classList.add("js-ready");
+
   setTheme(theme);
   setLang(lang);
   initCursor();
