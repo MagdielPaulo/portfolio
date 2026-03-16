@@ -6,24 +6,25 @@
     <title>Magdiel Paulo — Desenvolvedor Full-Stack</title>
     <meta name="description" content="Portfólio de Magdiel Paulo, Desenvolvedor Full-Stack baseado em Maceió, Brasil." />
 
-    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
 
-    
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
-   
+    <!-- Devicon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
 
-    <link rel="stylesheet" href="style.css" />
+    <!-- Main CSS — linked directly so it ALWAYS loads -->
+    <link rel="stylesheet" href="/style.css" />
   </head>
 
   <body>
     <div class="cursor-glow" id="cursorGlow"></div>
 
-   
+    <!-- ===== HEADER ===== -->
     <header id="header">
       <a href="#" class="logo">MP<span class="dot">.</span></a>
       <nav id="nav-desktop">
@@ -41,7 +42,7 @@
       </div>
     </header>
 
-    
+    <!-- Mobile Nav -->
     <div id="mobile-nav" class="mobile-nav">
       <nav>
         <a href="#sobre" class="mobile-link" data-key="nav_about">Sobre</a>
@@ -53,12 +54,12 @@
       </nav>
     </div>
 
+    <!-- ===== MAIN ===== -->
     <main>
 
-     
+      <!-- HERO -->
       <section id="hero" class="hero">
         <div class="hero-grid">
-         
           <div class="hero-content">
             <p class="hero-greeting" data-key="hero_greeting">
               <i class="bi bi-terminal-fill"></i> Olá, eu sou
@@ -82,7 +83,7 @@
             </div>
           </div>
 
-          
+          <!-- Right: code window -->
           <div class="hero-visual">
             <div class="code-window">
               <div class="code-bar">
@@ -91,25 +92,21 @@
                 <span class="code-dot green"></span>
                 <span class="code-bar-title">developer.js</span>
               </div>
-              <div class="code-body">
-                <code>
-<span class="c-purple">const</span> <span class="c-blue">dev</span> = {<br>
-&nbsp;&nbsp;<span class="c-green">name</span>: <span class="c-orange">"Magdiel Paulo"</span>,<br>
-&nbsp;&nbsp;<span class="c-green">role</span>: <span class="c-orange">"Full-Stack Dev"</span>,<br>
-&nbsp;&nbsp;<span class="c-green">skills</span>: [<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-orange">"JavaScript"</span>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-orange">"Python"</span>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-orange">"Angular"</span>,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-orange">"Node.js"</span>,<br>
-&nbsp;&nbsp;],<br>
-&nbsp;&nbsp;<span class="c-green">available</span>: <span class="c-purple">true</span>,<br>
-};<br><br>
-<span class="c-dim">// Let's build something great</span><br>
-<span class="c-purple">export default</span> <span class="c-blue">dev</span>;
-                </code>
-              </div>
+              <div class="code-body"><code><span class="c-purple">const</span> <span class="c-blue">dev</span> = {
+  <span class="c-green">name</span>: <span class="c-orange">"Magdiel Paulo"</span>,
+  <span class="c-green">role</span>: <span class="c-orange">"Full-Stack Dev"</span>,
+  <span class="c-green">skills</span>: [
+    <span class="c-orange">"JavaScript"</span>,
+    <span class="c-orange">"Python"</span>,
+    <span class="c-orange">"Angular"</span>,
+    <span class="c-orange">"Node.js"</span>,
+  ],
+  <span class="c-green">available</span>: <span class="c-purple">true</span>,
+};
+
+<span class="c-dim">// Let's build something great</span>
+<span class="c-purple">export default</span> <span class="c-blue">dev</span>;</code></div>
             </div>
-           
             <div class="float-bubble b1"><i class="devicon-javascript-plain"></i></div>
             <div class="float-bubble b2"><i class="devicon-python-plain"></i></div>
             <div class="float-bubble b3"><i class="devicon-angularjs-plain"></i></div>
@@ -124,7 +121,7 @@
         </div>
       </section>
 
-    
+      <!-- SOBRE -->
       <section id="sobre" class="section">
         <div class="container">
           <span class="section-tag" data-key="about_tag">01 // Sobre mim</span>
@@ -156,14 +153,12 @@
         </div>
       </section>
 
-     
+      <!-- SKILLS -->
       <section id="skills" class="section section-alt">
         <div class="container">
           <span class="section-tag" data-key="skills_tag">02 // Competências</span>
           <h2 class="section-heading" data-key="skills_heading">Stack <span class="accent">tecnológica</span>.</h2>
-
           <div class="skills-grid">
-           
             <div class="skill-card" data-anim="up">
               <h3 data-key="sk_lang">Linguagens</h3>
               <div class="tech-icons">
@@ -172,7 +167,6 @@
                 <div class="tech-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
               </div>
             </div>
-            
             <div class="skill-card" data-anim="up">
               <h3>Front-end</h3>
               <div class="tech-icons">
@@ -182,7 +176,6 @@
                 <div class="tech-item"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind</span></div>
               </div>
             </div>
-           
             <div class="skill-card" data-anim="up">
               <h3>Back-end</h3>
               <div class="tech-icons">
@@ -190,7 +183,6 @@
                 <div class="tech-item"><i class="devicon-express-original"></i><span>APIs REST</span></div>
               </div>
             </div>
-           
             <div class="skill-card" data-anim="up">
               <h3 data-key="sk_db">Banco de Dados</h3>
               <div class="tech-icons">
@@ -198,7 +190,6 @@
                 <div class="tech-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
               </div>
             </div>
-           
             <div class="skill-card" data-anim="up">
               <h3>DevOps</h3>
               <div class="tech-icons">
@@ -208,7 +199,6 @@
                 <div class="tech-item"><i class="devicon-linux-plain"></i><span>Linux</span></div>
               </div>
             </div>
-            
             <div class="skill-card" data-anim="up">
               <h3 data-key="sk_tools">Ferramentas</h3>
               <div class="tech-icons">
@@ -221,11 +211,11 @@
         </div>
       </section>
 
+      <!-- PROJETOS -->
       <section id="projetos" class="section">
         <div class="container">
           <span class="section-tag" data-key="projects_tag">03 // Projetos</span>
           <h2 class="section-heading" data-key="projects_heading">Trabalhos <span class="accent">selecionados</span>.</h2>
-
           <div class="projects-list">
             <a href="https://github.com/MagdielPaulo/portfolio" target="_blank" rel="noopener" class="project-row" data-anim="up">
               <span class="proj-num">01</span>
@@ -236,7 +226,6 @@
               </div>
               <i class="bi bi-arrow-up-right proj-arrow"></i>
             </a>
-
             <a href="https://github.com/MagdielPaulo/IMC" target="_blank" rel="noopener" class="project-row" data-anim="up">
               <span class="proj-num">02</span>
               <div class="proj-body">
@@ -246,7 +235,6 @@
               </div>
               <i class="bi bi-arrow-up-right proj-arrow"></i>
             </a>
-
             <a href="https://github.com/MagdielPaulo/website-ex" target="_blank" rel="noopener" class="project-row" data-anim="up">
               <span class="proj-num">03</span>
               <div class="proj-body">
@@ -260,12 +248,11 @@
         </div>
       </section>
 
-     
+      <!-- EXPERIÊNCIA -->
       <section id="experiencia" class="section section-alt">
         <div class="container">
           <span class="section-tag" data-key="exp_tag">04 // Experiência</span>
           <h2 class="section-heading" data-key="exp_heading">Trajetória <span class="accent">profissional</span>.</h2>
-
           <div class="timeline">
             <div class="timeline-item" data-anim="up">
               <div class="tl-marker"><div class="tl-dot"></div></div>
@@ -276,7 +263,6 @@
                 <p data-key="exp1_desc">Ensino de lógica de programação, algoritmos e fundamentos de desenvolvimento de software. Orientação de projetos de conclusão de curso e organização de feiras de tecnologia.</p>
               </div>
             </div>
-
             <div class="timeline-item" data-anim="up">
               <div class="tl-marker"><div class="tl-dot"></div></div>
               <div class="tl-content">
@@ -286,7 +272,6 @@
                 <p data-key="exp2_desc">Ensino de informática aplicada, sistemas operacionais e ferramentas de produtividade. Desenvolvimento de exercícios práticos e atualização de materiais didáticos.</p>
               </div>
             </div>
-
             <div class="timeline-item" data-anim="up">
               <div class="tl-marker"><div class="tl-dot"></div></div>
               <div class="tl-content">
@@ -296,7 +281,6 @@
                 <p data-key="exp3_desc">Suporte técnico em ambientes corporativos e educacionais, manutenção de hardware, configuração de redes e administração de infraestrutura tecnológica.</p>
               </div>
             </div>
-
             <div class="timeline-item" data-anim="up">
               <div class="tl-marker"><div class="tl-dot"></div></div>
               <div class="tl-content">
@@ -310,12 +294,11 @@
         </div>
       </section>
 
-      
+      <!-- FORMAÇÃO -->
       <section id="formacao" class="section">
         <div class="container">
           <span class="section-tag" data-key="edu_tag">05 // Formação</span>
           <h2 class="section-heading" data-key="edu_heading">Formação <span class="accent">acadêmica</span>.</h2>
-
           <div class="edu-list">
             <div class="edu-card" data-anim="up">
               <div class="edu-icon"><i class="bi bi-mortarboard-fill"></i></div>
@@ -347,7 +330,7 @@
         </div>
       </section>
 
-      
+      <!-- CONTATO -->
       <section id="contato" class="section section-contact">
         <div class="container">
           <span class="section-tag" data-key="contact_tag">06 // Contato</span>
@@ -368,7 +351,7 @@
       </section>
     </main>
 
-   
+    <!-- FOOTER -->
     <footer>
       <div class="container footer-row">
         <span>&copy; 2026 Magdiel Paulo</span>
@@ -376,6 +359,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="/script.js"></script>
   </body>
 </html>

@@ -124,12 +124,10 @@ header.scrolled{
   min-height:100vh;display:flex;align-items:center;
   position:relative;padding:120px clamp(20px,5vw,80px) 80px;
 }
-
 .hero-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:60px;
   align-items:center;max-width:1100px;margin:0 auto;width:100%;
 }
-
 .hero-content{max-width:560px}
 
 .hero-greeting{
@@ -196,16 +194,14 @@ body.light .btn-primary{color:#fff}
   background:var(--accent-soft);transform:translateY(-2px);
 }
 
-/* === Hero visual: code window === */
+/* Hero visual: code window */
 .hero-visual{
   position:relative;
   opacity:0;transform:translateY(30px);
   animation:fadeUp .9s var(--ease) .6s forwards;
 }
-
 .code-window{
-  background:var(--bg-card);
-  border:1px solid var(--border-h);
+  background:var(--bg-card);border:1px solid var(--border-h);
   border-radius:14px;overflow:hidden;
   box-shadow:0 20px 60px rgba(0,0,0,.35);
 }
@@ -225,7 +221,6 @@ body.light .code-bar{background:rgba(0,0,0,.02)}
   margin-left:auto;font-family:var(--mono);font-size:.7rem;
   color:var(--text-dim);letter-spacing:.03em;
 }
-
 .code-body{
   padding:20px 22px;font-family:var(--mono);font-size:.82rem;line-height:1.8;
   color:var(--text-dim);
@@ -244,25 +239,20 @@ body.light .c-orange{color:#ea580c}
 
 /* Floating tech bubbles */
 .float-bubble{
-  position:absolute;
-  width:48px;height:48px;border-radius:14px;
+  position:absolute;width:48px;height:48px;border-radius:14px;
   background:var(--bg-card);border:1px solid var(--border-h);
   display:grid;place-items:center;font-size:1.4rem;
   box-shadow:0 8px 24px rgba(0,0,0,.2);
   animation:floatBubble 6s ease-in-out infinite;
 }
 body.light .float-bubble{box-shadow:0 6px 20px rgba(0,0,0,.06)}
-
 .b1{top:-16px;right:20px;animation-delay:0s;color:#f7df1e}
 .b2{top:30%;right:-20px;animation-delay:.8s;color:#3776ab}
 .b3{bottom:10%;right:-10px;animation-delay:1.6s;color:#dd0031}
 .b4{bottom:-12px;left:30%;animation-delay:2.4s;color:#68a063}
 .b5{top:20%;left:-20px;animation-delay:3.2s;color:#2496ed}
 
-@keyframes floatBubble{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-12px)}
-}
+@keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 
 /* Scroll cue */
 .scroll-cue{
@@ -282,7 +272,6 @@ body.light .float-bubble{box-shadow:0 6px 20px rgba(0,0,0,.06)}
 /* ===== SECTIONS ===== */
 .section{padding:100px 0;position:relative}
 .section-alt{background:var(--bg-alt)}
-
 .section-tag{
   display:block;font-family:var(--mono);font-size:.75rem;
   color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;
@@ -296,7 +285,6 @@ body.light .float-bubble{box-shadow:0 6px 20px rgba(0,0,0,.06)}
 .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:start}
 .about-text p{color:var(--text-dim);margin-bottom:16px;line-height:1.8}
 .about-text p:last-child{margin-bottom:0}
-
 .about-info{display:flex;flex-direction:column;gap:20px;padding-top:6px}
 .info-row{display:flex;flex-direction:column;gap:3px;padding-bottom:20px;border-bottom:1px solid var(--border)}
 .info-label{font-family:var(--mono);font-size:.7rem;color:var(--text-dim);letter-spacing:.1em;text-transform:uppercase}
@@ -304,30 +292,20 @@ body.light .float-bubble{box-shadow:0 6px 20px rgba(0,0,0,.06)}
 .status-on{color:var(--accent);display:flex;align-items:center;gap:6px}
 .status-on i{font-size:.5rem;animation:pulse 2s infinite}
 
-/* ===== SKILLS — tech icon cards ===== */
+/* ===== SKILLS ===== */
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-
 .skill-card{
   background:var(--bg-card);border:1px solid var(--border);
-  border-radius:var(--radius);padding:24px 22px;
-  transition:all .3s var(--ease);
+  border-radius:var(--radius);padding:24px 22px;transition:all .3s var(--ease);
 }
 .skill-card:hover{border-color:var(--accent-mid);background:var(--accent-soft);transform:translateY(-3px)}
 .skill-card h3{font-size:.95rem;font-weight:600;margin-bottom:16px}
-
 .tech-icons{display:flex;flex-wrap:wrap;gap:14px}
-
-.tech-item{
-  display:flex;flex-direction:column;align-items:center;gap:6px;
-  width:60px;text-align:center;
-}
-.tech-item i{
-  font-size:1.8rem;transition:transform .3s var(--ease);
-}
+.tech-item{display:flex;flex-direction:column;align-items:center;gap:6px;width:60px;text-align:center}
+.tech-item i{font-size:1.8rem;transition:transform .3s var(--ease)}
 .tech-item:hover i{transform:scale(1.2) translateY(-2px)}
 .tech-item span{font-family:var(--mono);font-size:.62rem;color:var(--text-dim);letter-spacing:.02em}
 
-/* uncolored devicons in dark mode fallback */
 body:not(.light) .devicon-express-original,
 body:not(.light) .devicon-linux-plain,
 body:not(.light) .devicon-github-original{color:var(--text)}
@@ -345,7 +323,6 @@ body.light .devicon-github-original{color:var(--text)}
 }
 .project-row:hover{background:var(--accent-soft);border-color:var(--border)}
 .project-row:hover .proj-arrow{transform:translate(3px,-3px);color:var(--accent)}
-
 .proj-num{font-family:var(--mono);font-size:.82rem;font-weight:500;color:var(--text-dim)}
 .proj-body h3{font-size:1.2rem;font-weight:700;margin-bottom:4px}
 .proj-body>p{font-size:.85rem;color:var(--text-dim);margin-bottom:10px}
@@ -359,25 +336,20 @@ body.light .devicon-github-original{color:var(--text)}
 /* ===== EXPERIENCE — fixed timeline ===== */
 .timeline{
   display:flex;flex-direction:column;gap:0;
-  position:relative;
-  padding-left:28px;
+  position:relative;padding-left:28px;
 }
-/* vertical line */
 .timeline::before{
   content:"";position:absolute;
   left:5px;top:8px;bottom:8px;
   width:1px;background:var(--border-h);
 }
-
 .timeline-item{
-  display:grid;grid-template-columns:auto 1fr;gap:0;
+  display:grid;grid-template-columns:1fr;
   padding:24px 0;border-bottom:1px solid var(--border);
   position:relative;
 }
-
 .tl-marker{
-  position:absolute;
-  left:-28px;top:30px;
+  position:absolute;left:-28px;top:30px;
   width:11px;height:11px;
 }
 .tl-dot{
@@ -387,7 +359,6 @@ body.light .devicon-github-original{color:var(--text)}
   box-shadow:0 0 0 1px var(--accent-mid);
 }
 body.light .tl-dot{border-color:var(--bg)}
-body.light .timeline::before{background:var(--border-h)}
 
 .tl-content{padding-left:0}
 .tl-period{
@@ -485,7 +456,6 @@ body.light::after{opacity:.028}
   .skills-grid{grid-template-columns:repeat(2,1fr)}
   .project-row{grid-template-columns:36px 1fr 28px;gap:14px}
 }
-
 @media(max-width:768px){
   #nav-desktop{display:none}
   .btn-hamburger{display:flex}
@@ -500,7 +470,6 @@ body.light::after{opacity:.028}
   .scroll-cue{display:none}
   .float-bubble{display:none}
 }
-
 @media(max-width:480px){
   .skills-grid{grid-template-columns:1fr}
   .hero-buttons{flex-direction:column}
