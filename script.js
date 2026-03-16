@@ -1,4 +1,6 @@
-
+// =============================================
+// MAGDIEL PAULO — PORTFOLIO
+// =============================================
 
 const i18n = {
   pt: {
@@ -36,6 +38,8 @@ const i18n = {
     proj2_desc: "Calculadora interativa de Índice de Massa Corporal com classificação automática.",
     proj3_name: "Site de Viagens",
     proj3_desc: "Landing page de agência de viagens para prática de layout responsivo e front-end.",
+    proj4_name: "Chronos Timer",
+    proj4_desc: "Sistema Pomodoro completo com gestão de tarefas, estatísticas de produtividade e personalização de temas.",
     exp_tag: "04 // Experiência",
     exp_heading: 'Trajetória <span class="accent">profissional</span>.',
     exp1_period: "1 ano e 4 meses",
@@ -103,6 +107,8 @@ const i18n = {
     proj2_desc: "Interactive Body Mass Index calculator with automatic classification.",
     proj3_name: "Travel Website",
     proj3_desc: "Travel agency landing page for responsive layout and front-end practice.",
+    proj4_name: "Chronos Timer",
+    proj4_desc: "Full Pomodoro system with task management, productivity stats and theme customization.",
     exp_tag: "04 // Experience",
     exp_heading: 'Professional <span class="accent">journey</span>.',
     exp1_period: "1 year 4 months",
