@@ -1,106 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Magdiel Paulo — Desenvolvedor Full-Stack</title>
-  <meta name="description" content="Portfólio de Magdiel Paulo, Desenvolvedor Full-Stack baseado em Maceió, Brasil." />
-
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap"
-    rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magdiel Paulo — Desenvolvedor Full-Stack</title>
+    <meta name="description" content="Portfólio de Magdiel Paulo, Desenvolvedor Full-Stack baseado em Maceió, Brasil." />
 
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
 
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
-  <link rel="stylesheet" href="/style.css" />
-</head>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css" />
 
-<body>
-  <div class="cursor-glow" id="cursorGlow"></div>
+    
+    <link rel="stylesheet" href="/style.css" />
+  </head>
 
+  <body>
+    <div class="cursor-glow" id="cursorGlow"></div>
 
-  <header id="header">
-    <a href="#" class="logo">MP<span class="dot">.</span></a>
-    <nav id="nav-desktop">
-      <a href="#sobre" class="nav-link" data-key="nav_about">Sobre</a>
-      <a href="#skills" class="nav-link" data-key="nav_skills">Skills</a>
-      <a href="#projetos" class="nav-link" data-key="nav_projects">Projetos</a>
-      <a href="#experiencia" class="nav-link" data-key="nav_experience">Experiência</a>
-      <a href="#formacao" class="nav-link" data-key="nav_education">Formação</a>
-      <a href="#contato" class="nav-link" data-key="nav_contact">Contato</a>
-    </nav>
-    <div class="header-actions">
-      <button id="btn-idioma" class="btn-icon" aria-label="Trocar idioma"><i class="bi bi-translate"></i></button>
-      <button id="btn-tema" class="btn-icon" aria-label="Trocar tema"><i class="bi bi-moon-stars"
-          id="icon-theme"></i></button>
-      <button id="btn-menu" class="btn-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    
+    <header id="header">
+      <a href="#" class="logo">MP<span class="dot">.</span></a>
+      <nav id="nav-desktop">
+        <a href="#sobre" class="nav-link" data-key="nav_about">Sobre</a>
+        <a href="#skills" class="nav-link" data-key="nav_skills">Skills</a>
+        <a href="#projetos" class="nav-link" data-key="nav_projects">Projetos</a>
+        <a href="#experiencia" class="nav-link" data-key="nav_experience">Experiência</a>
+        <a href="#formacao" class="nav-link" data-key="nav_education">Formação</a>
+        <a href="#contato" class="nav-link" data-key="nav_contact">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <button id="btn-idioma" class="btn-icon" aria-label="Trocar idioma"><i class="bi bi-translate"></i></button>
+        <button id="btn-tema" class="btn-icon" aria-label="Trocar tema"><i class="bi bi-moon-stars" id="icon-theme"></i></button>
+        <button id="btn-menu" class="btn-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </header>
+
+   
+    <div id="mobile-nav" class="mobile-nav">
+      <nav>
+        <a href="#sobre" class="mobile-link" data-key="nav_about">Sobre</a>
+        <a href="#skills" class="mobile-link" data-key="nav_skills">Skills</a>
+        <a href="#projetos" class="mobile-link" data-key="nav_projects">Projetos</a>
+        <a href="#experiencia" class="mobile-link" data-key="nav_experience">Experiência</a>
+        <a href="#formacao" class="mobile-link" data-key="nav_education">Formação</a>
+        <a href="#contato" class="mobile-link" data-key="nav_contact">Contato</a>
+      </nav>
     </div>
-  </header>
 
+    
+    <main>
 
-  <div id="mobile-nav" class="mobile-nav">
-    <nav>
-      <a href="#sobre" class="mobile-link" data-key="nav_about">Sobre</a>
-      <a href="#skills" class="mobile-link" data-key="nav_skills">Skills</a>
-      <a href="#projetos" class="mobile-link" data-key="nav_projects">Projetos</a>
-      <a href="#experiencia" class="mobile-link" data-key="nav_experience">Experiência</a>
-      <a href="#formacao" class="mobile-link" data-key="nav_education">Formação</a>
-      <a href="#contato" class="mobile-link" data-key="nav_contact">Contato</a>
-    </nav>
-  </div>
-
-
-  <main>
-
-
-    <section id="hero" class="hero">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <p class="hero-greeting" data-key="hero_greeting">
-            <i class="bi bi-terminal-fill"></i> Olá, eu sou
-          </p>
-          <h1 class="hero-name">
-            <span class="line"><span class="reveal">Magdiel</span></span>
-            <span class="line"><span class="reveal">Paulo<span class="dot">.</span></span></span>
-          </h1>
-          <p class="hero-role" data-key="hero_role">Desenvolvedor Full-Stack Júnior</p>
-          <p class="hero-bio" data-key="hero_bio">
-            Formado em Ciência da Computação, focado em construir aplicações web modernas e escaláveis com atenção a
-            design e performance.
-          </p>
-          <div class="hero-buttons">
-            <a href="#projetos" class="btn-primary" data-key="hero_cta"><i class="bi bi-rocket-takeoff"></i> Ver
-              Projetos</a>
-            <a href="#contato" class="btn-ghost" data-key="hero_contact"><i class="bi bi-chat-dots"></i> Contato</a>
-          </div>
-          <div class="hero-social">
-            <a href="https://github.com/MagdielPaulo" target="_blank" rel="noopener" aria-label="GitHub"><i
-                class="bi bi-github"></i></a>
-            <a href="https://www.linkedin.com/in/magdiel-paulo/" target="_blank" rel="noopener" aria-label="LinkedIn"><i
-                class="bi bi-linkedin"></i></a>
-            <a href="/cdn-cgi/l/email-protection#4c212d2b282529203c2d39202328293a0c2b212d2520622f2321"
-              aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
-          </div>
-        </div>
-
-
-        <div class="hero-visual">
-          <div class="code-window">
-            <div class="code-bar">
-              <span class="code-dot red"></span>
-              <span class="code-dot yellow"></span>
-              <span class="code-dot green"></span>
-              <span class="code-bar-title">developer.js</span>
+    
+      <section id="hero" class="hero">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <p class="hero-greeting" data-key="hero_greeting">
+              <i class="bi bi-terminal-fill"></i> Olá, eu sou
+            </p>
+            <h1 class="hero-name">
+              <span class="line"><span class="reveal">Magdiel</span></span>
+              <span class="line"><span class="reveal">Paulo<span class="dot">.</span></span></span>
+            </h1>
+            <p class="hero-role" data-key="hero_role">Desenvolvedor Full-Stack Júnior</p>
+            <p class="hero-bio" data-key="hero_bio">
+              Formado em Ciência da Computação, focado em construir aplicações web modernas e escaláveis com atenção a design e performance.
+            </p>
+            <div class="hero-buttons">
+              <a href="#projetos" class="btn-primary" data-key="hero_cta"><i class="bi bi-rocket-takeoff"></i> Ver Projetos</a>
+              <a href="#contato" class="btn-ghost" data-key="hero_contact"><i class="bi bi-chat-dots"></i> Contato</a>
             </div>
-            <div class="code-body"><code><span class="c-purple">const</span> <span class="c-blue">dev</span> = {
+            <div class="hero-social">
+              <a href="https://github.com/MagdielPaulo" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+              <a href="https://www.linkedin.com/in/magdiel-paulo/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+              <a href="mailto:magdielpaulodev@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+            </div>
+          </div>
+
+        
+          <div class="hero-visual">
+            <div class="code-window">
+              <div class="code-bar">
+                <span class="code-dot red"></span>
+                <span class="code-dot yellow"></span>
+                <span class="code-dot green"></span>
+                <span class="code-bar-title">developer.js</span>
+              </div>
+              <div class="code-body"><code><span class="c-purple">const</span> <span class="c-blue">dev</span> = {
   <span class="c-green">name</span>: <span class="c-orange">"Magdiel Paulo"</span>,
   <span class="c-green">role</span>: <span class="c-orange">"Full-Stack Dev"</span>,
   <span class="c-green">skills</span>: [
@@ -114,291 +106,258 @@
 
 <span class="c-dim">// Let's build something great</span>
 <span class="c-purple">export default</span> <span class="c-blue">dev</span>;</code></div>
-          </div>
-          <div class="float-bubble b1"><i class="devicon-javascript-plain"></i></div>
-          <div class="float-bubble b2"><i class="devicon-python-plain"></i></div>
-          <div class="float-bubble b3"><i class="devicon-angularjs-plain"></i></div>
-          <div class="float-bubble b4"><i class="devicon-nodejs-plain"></i></div>
-          <div class="float-bubble b5"><i class="devicon-docker-plain"></i></div>
-        </div>
-      </div>
-
-      <div class="scroll-cue">
-        <span data-key="scroll_text">scroll</span>
-        <div class="scroll-bar"></div>
-      </div>
-    </section>
-
-
-    <section id="sobre" class="section">
-      <div class="container">
-        <span class="section-tag" data-key="about_tag">01 // Sobre mim</span>
-        <div class="about-grid">
-          <div class="about-text">
-            <h2 class="section-heading" data-key="about_heading">Transformando ideias em <span class="accent">soluções
-                digitais</span>.</h2>
-            <p data-key="about_p1">Profissional com formação em Ciência da Computação e especialização em andamento em
-              Desenvolvimento Full Stack. Experiência no desenvolvimento web com JavaScript, Python e Angular, além de
-              construção de APIs REST e manipulação de bancos de dados SQL.</p>
-            <p data-key="about_p2">Vivência prática no desenvolvimento de soluções tecnológicas, automação de processos
-              administrativos e suporte a sistemas corporativos. Busco oportunidades para construir aplicações web
-              escaláveis e melhorar sistemas existentes.</p>
-          </div>
-          <div class="about-info">
-            <div class="info-row">
-              <span class="info-label" data-key="info_name">Nome</span>
-              <span class="info-value">Magdiel Paulo N. de Cristo</span>
             </div>
-            <div class="info-row">
-              <span class="info-label" data-key="info_location">Localização</span>
-              <span class="info-value" data-key="info_location_val">Maceió, AL — Brasil</span>
-            </div>
-            <div class="info-row">
-              <span class="info-label" data-key="info_email">E-mail</span>
-              <span class="info-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                  data-cfemail="e5888482818c8089958490898a818093a58288848c89cb868a88">[email&#160;protected]</a></span>
-            </div>
-            <div class="info-row">
-              <span class="info-label">Status</span>
-              <span class="info-value status-on"><i class="bi bi-circle-fill"></i> <span
-                  data-key="info_status">Disponível para projetos</span></span>
-            </div>
+            <div class="float-bubble b1"><i class="devicon-javascript-plain"></i></div>
+            <div class="float-bubble b2"><i class="devicon-python-plain"></i></div>
+            <div class="float-bubble b3"><i class="devicon-angularjs-plain"></i></div>
+            <div class="float-bubble b4"><i class="devicon-nodejs-plain"></i></div>
+            <div class="float-bubble b5"><i class="devicon-docker-plain"></i></div>
           </div>
         </div>
-      </div>
-    </section>
 
+        <div class="scroll-cue">
+          <span data-key="scroll_text">scroll</span>
+          <div class="scroll-bar"></div>
+        </div>
+      </section>
 
-    <section id="skills" class="section section-alt">
-      <div class="container">
-        <span class="section-tag" data-key="skills_tag">02 // Competências</span>
-        <h2 class="section-heading" data-key="skills_heading">Stack <span class="accent">tecnológica</span>.</h2>
-        <div class="skills-grid">
-          <div class="skill-card" data-anim="up">
-            <h3 data-key="sk_lang">Linguagens</h3>
-            <div class="tech-icons">
-              <div class="tech-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
-              <div class="tech-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
-              <div class="tech-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+    
+      <section id="sobre" class="section">
+        <div class="container">
+          <span class="section-tag" data-key="about_tag">01 // Sobre mim</span>
+          <div class="about-grid">
+            <div class="about-text">
+              <h2 class="section-heading" data-key="about_heading">Transformando ideias em <span class="accent">soluções digitais</span>.</h2>
+              <p data-key="about_p1">Profissional com formação em Ciência da Computação e especialização em andamento em Desenvolvimento Full Stack. Experiência no desenvolvimento web com JavaScript, Python e Angular, além de construção de APIs REST e manipulação de bancos de dados SQL.</p>
+              <p data-key="about_p2">Vivência prática no desenvolvimento de soluções tecnológicas, automação de processos administrativos e suporte a sistemas corporativos. Busco oportunidades para construir aplicações web escaláveis e melhorar sistemas existentes.</p>
             </div>
-          </div>
-          <div class="skill-card" data-anim="up">
-            <h3>Front-end</h3>
-            <div class="tech-icons">
-              <div class="tech-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
-              <div class="tech-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
-              <div class="tech-item"><i class="devicon-angularjs-plain colored"></i><span>Angular</span></div>
-              <div class="tech-item"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind</span></div>
-            </div>
-          </div>
-          <div class="skill-card" data-anim="up">
-            <h3>Back-end</h3>
-            <div class="tech-icons">
-              <div class="tech-item"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
-              <div class="tech-item"><i class="devicon-express-original"></i><span>APIs REST</span></div>
-            </div>
-          </div>
-          <div class="skill-card" data-anim="up">
-            <h3 data-key="sk_db">Banco de Dados</h3>
-            <div class="tech-icons">
-              <div class="tech-item"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
-              <div class="tech-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
-            </div>
-          </div>
-          <div class="skill-card" data-anim="up">
-            <h3>DevOps</h3>
-            <div class="tech-icons">
-              <div class="tech-item"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
-              <div class="tech-item"><i class="devicon-amazonwebservices-plain-wordmark colored"></i><span>AWS</span>
+            <div class="about-info">
+              <div class="info-row">
+                <span class="info-label" data-key="info_name">Nome</span>
+                <span class="info-value">Magdiel Paulo N. de Cristo</span>
               </div>
-              <div class="tech-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
-              <div class="tech-item"><i class="devicon-linux-plain"></i><span>Linux</span></div>
-            </div>
-          </div>
-          <div class="skill-card" data-anim="up">
-            <h3 data-key="sk_tools">Ferramentas</h3>
-            <div class="tech-icons">
-              <div class="tech-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
-              <div class="tech-item"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
-              <div class="tech-item"><i class="devicon-trello-plain colored"></i><span>Trello</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="projetos" class="section">
-      <div class="container">
-        <span class="section-tag" data-key="projects_tag">03 // Projetos</span>
-        <h2 class="section-heading" data-key="projects_heading">Trabalhos <span class="accent">selecionados</span>.</h2>
-        <div class="projects-list">
-          <a href="https://github.com/MagdielPaulo/portfolio" target="_blank" rel="noopener" class="project-row"
-            data-anim="up">
-            <span class="proj-num">01</span>
-            <div class="proj-body">
-              <h3 data-key="proj1_name">Portfólio Pessoal</h3>
-              <p data-key="proj1_desc">Sistema portfólio interativo com tema retrowave — HTML, CSS, JavaScript, Vite.
-              </p>
-              <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vite</span></div>
-            </div>
-            <i class="bi bi-arrow-up-right proj-arrow"></i>
-          </a>
-          <a href="https://github.com/MagdielPaulo/IMC" target="_blank" rel="noopener" class="project-row"
-            data-anim="up">
-            <span class="proj-num">02</span>
-            <div class="proj-body">
-              <h3 data-key="proj2_name">Calculadora de IMC</h3>
-              <p data-key="proj2_desc">Calculadora interativa de Índice de Massa Corporal com classificação automática.
-              </p>
-              <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            </div>
-            <i class="bi bi-arrow-up-right proj-arrow"></i>
-          </a>
-          <a href="https://github.com/MagdielPaulo/website-ex" target="_blank" rel="noopener" class="project-row"
-            data-anim="up">
-            <span class="proj-num">03</span>
-            <div class="proj-body">
-              <h3 data-key="proj3_name">Site de Viagens</h3>
-              <p data-key="proj3_desc">Landing page de agência de viagens para prática de layout responsivo e front-end.
-              </p>
-              <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            </div>
-            <i class="bi bi-arrow-up-right proj-arrow"></i>
-          </a>
-          <a href="https://github.com/MagdielPaulo/Chrono-Timer" target="_blank" rel="noopener" class="project-row"
-            data-anim="up">
-            <span class="proj-num">04</span>
-            <div class="proj-body">
-              <h3 data-key="proj4_name">Chronos Timer</h3>
-              <p data-key="proj4_desc">Sistema Pomodoro completo com gestão de tarefas, estatísticas de produtividade e
-                personalização de temas.</p>
-              <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bootstrap</span>
+              <div class="info-row">
+                <span class="info-label" data-key="info_location">Localização</span>
+                <span class="info-value" data-key="info_location_val">Maceió, AL — Brasil</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label" data-key="info_email">E-mail</span>
+                <span class="info-value">magdielpaulodev@gmail.com</span>
+              </div>
+              <div class="info-row">
+                <span class="info-label">Status</span>
+                <span class="info-value status-on"><i class="bi bi-circle-fill"></i> <span data-key="info_status">Disponível para projetos</span></span>
               </div>
             </div>
-            <i class="bi bi-arrow-up-right proj-arrow"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="experiencia" class="section section-alt">
-      <div class="container">
-        <span class="section-tag" data-key="exp_tag">04 // Experiência</span>
-        <h2 class="section-heading" data-key="exp_heading">Trajetória <span class="accent">profissional</span>.</h2>
-        <div class="timeline">
-          <div class="timeline-item" data-anim="up">
-            <div class="tl-marker">
-              <div class="tl-dot"></div>
-            </div>
-            <div class="tl-content">
-              <span class="tl-period" data-key="exp1_period">1 ano e 4 meses</span>
-              <h3 data-key="exp1_title">Professor Técnico em Informática</h3>
-              <span class="tl-company">SEDUC/AL — PRONATEC</span>
-              <p data-key="exp1_desc">Ensino de lógica de programação, algoritmos e fundamentos de desenvolvimento de
-                software. Orientação de projetos de conclusão de curso e organização de feiras de tecnologia.</p>
-            </div>
-          </div>
-          <div class="timeline-item" data-anim="up">
-            <div class="tl-marker">
-              <div class="tl-dot"></div>
-            </div>
-            <div class="tl-content">
-              <span class="tl-period" data-key="exp2_period">6 meses</span>
-              <h3 data-key="exp2_title">Instrutor de Informática</h3>
-              <span class="tl-company">Grau Profissionalizante</span>
-              <p data-key="exp2_desc">Ensino de informática aplicada, sistemas operacionais e ferramentas de
-                produtividade. Desenvolvimento de exercícios práticos e atualização de materiais didáticos.</p>
-            </div>
-          </div>
-          <div class="timeline-item" data-anim="up">
-            <div class="tl-marker">
-              <div class="tl-dot"></div>
-            </div>
-            <div class="tl-content">
-              <span class="tl-period" data-key="exp3_period">2 anos</span>
-              <h3 data-key="exp3_title">Técnico de Suporte de TI</h3>
-              <span class="tl-company">SEDUC/AL</span>
-              <p data-key="exp3_desc">Suporte técnico em ambientes corporativos e educacionais, manutenção de hardware,
-                configuração de redes e administração de infraestrutura tecnológica.</p>
-            </div>
-          </div>
-          <div class="timeline-item" data-anim="up">
-            <div class="tl-marker">
-              <div class="tl-dot"></div>
-            </div>
-            <div class="tl-content">
-              <span class="tl-period" data-key="exp4_period">2 anos</span>
-              <h3 data-key="exp4_title">Assistente Administrativo — TI</h3>
-              <span class="tl-company">Central Açucareira Santo Antônio S.A.</span>
-              <p data-key="exp4_desc">Desenvolvimento de soluções internas com HTML, CSS e JavaScript. Automação de
-                processos administrativos, integração de dados entre setores e elaboração de documentação técnica.</p>
-            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-
-    <section id="formacao" class="section">
-      <div class="container">
-        <span class="section-tag" data-key="edu_tag">05 // Formação</span>
-        <h2 class="section-heading" data-key="edu_heading">Formação <span class="accent">acadêmica</span>.</h2>
-        <div class="edu-list">
-          <div class="edu-card" data-anim="up">
-            <div class="edu-icon"><i class="bi bi-mortarboard-fill"></i></div>
-            <div class="edu-body">
-              <span class="edu-period" data-key="edu1_period">2019 — 2023</span>
-              <h3 data-key="edu1_title">Bacharelado em Ciência da Computação</h3>
-              <p data-key="edu1_inst">Centro Universitário de Maceió — UNIMA | AFYA</p>
+     
+      <section id="skills" class="section section-alt">
+        <div class="container">
+          <span class="section-tag" data-key="skills_tag">02 // Competências</span>
+          <h2 class="section-heading" data-key="skills_heading">Stack <span class="accent">tecnológica</span>.</h2>
+          <div class="skills-grid">
+            <div class="skill-card" data-anim="up">
+              <h3 data-key="sk_lang">Linguagens</h3>
+              <div class="tech-icons">
+                <div class="tech-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+                <div class="tech-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+                <div class="tech-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+              </div>
             </div>
-          </div>
-          <div class="edu-card" data-anim="up">
-            <div class="edu-icon"><i class="bi bi-award-fill"></i></div>
-            <div class="edu-body">
-              <span class="edu-period" data-key="edu2_period">Jan/2026 — Abr/2026</span>
-              <h3 data-key="edu2_title">Especialização em Desenvolvimento Full Stack</h3>
-              <p data-key="edu2_inst">Centro Universitário União das Américas Descomplica</p>
-              <span class="badge-progress" data-key="edu2_status"><i class="bi bi-hourglass-split"></i> Em
-                andamento</span>
+            <div class="skill-card" data-anim="up">
+              <h3>Front-end</h3>
+              <div class="tech-icons">
+                <div class="tech-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+                <div class="tech-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+                <div class="tech-item"><i class="devicon-angularjs-plain colored"></i><span>Angular</span></div>
+                <div class="tech-item"><i class="devicon-tailwindcss-original colored"></i><span>Tailwind</span></div>
+              </div>
             </div>
-          </div>
-          <div class="edu-card" data-anim="up">
-            <div class="edu-icon"><i class="bi bi-cloud-arrow-up-fill"></i></div>
-            <div class="edu-body">
-              <span class="edu-period" data-key="cert_label">Certificação</span>
-              <h3 data-key="cert_title">AWS Cloud Practitioner</h3>
-              <p data-key="cert_inst">Escola da Nuvem — Programa de Capacitação em Nuvem</p>
-              <span class="badge-progress" data-key="cert_status"><i class="bi bi-hourglass-split"></i> Em
-                preparação</span>
+            <div class="skill-card" data-anim="up">
+              <h3>Back-end</h3>
+              <div class="tech-icons">
+                <div class="tech-item"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+                <div class="tech-item"><i class="devicon-express-original"></i><span>APIs REST</span></div>
+              </div>
+            </div>
+            <div class="skill-card" data-anim="up">
+              <h3 data-key="sk_db">Banco de Dados</h3>
+              <div class="tech-icons">
+                <div class="tech-item"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+                <div class="tech-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+              </div>
+            </div>
+            <div class="skill-card" data-anim="up">
+              <h3>DevOps</h3>
+              <div class="tech-icons">
+                <div class="tech-item"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+                <div class="tech-item"><i class="devicon-amazonwebservices-plain-wordmark colored"></i><span>AWS</span></div>
+                <div class="tech-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+                <div class="tech-item"><i class="devicon-linux-plain"></i><span>Linux</span></div>
+              </div>
+            </div>
+            <div class="skill-card" data-anim="up">
+              <h3 data-key="sk_tools">Ferramentas</h3>
+              <div class="tech-icons">
+                <div class="tech-item"><i class="devicon-github-original"></i><span>GitHub</span></div>
+                <div class="tech-item"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+                <div class="tech-item"><i class="devicon-trello-plain colored"></i><span>Trello</span></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-
-    <section id="contato" class="section section-contact">
-      <div class="container">
-        <span class="section-tag" data-key="contact_tag">06 // Contato</span>
-        <h2 class="contact-heading" data-key="contact_heading">Vamos <span class="accent">trabalhar</span> juntos?</h2>
-        <p class="contact-sub" data-key="contact_sub">Aberto a novas oportunidades, freelance e projetos interessantes.
-        </p>
-        <div class="contact-grid">
-          <a href="/cdn-cgi/l/email-protection#721f1315161b171e0213071e1d16170432151f131b1e5c111d1f"
-            class="contact-card" data-anim="up">
-            <i class="bi bi-envelope-fill"></i><span><span class="__cf_email__"
-                data-cfemail="234e4244474a464f5342564f4c47465563444e424a4f0d404c4e">[email&#160;protected]</span></span>
-          </a>
-          <a href="https://github.com/MagdielPaulo" target="_blank" rel="noopener" class="contact-card" data-anim="up">
-            <i class="bi bi-github"></i><span>GitHub</span>
-          </a>
-          <a href="https://www.linkedin.com/in/magdiel-paulo/" target="_blank" rel="noopener" class="contact-card"
-            data-anim="up">
-            <i class="bi bi-linkedin"></i><span>LinkedIn</span>
-          </a>
+     
+      <section id="projetos" class="section">
+        <div class="container">
+          <span class="section-tag" data-key="projects_tag">03 // Projetos</span>
+          <h2 class="section-heading" data-key="projects_heading">Trabalhos <span class="accent">selecionados</span>.</h2>
+          <div class="projects-list">
+            <a href="https://github.com/MagdielPaulo/portfolio" target="_blank" rel="noopener" class="project-row" data-anim="up">
+              <span class="proj-num">01</span>
+              <div class="proj-body">
+                <h3 data-key="proj1_name">Portfólio Pessoal</h3>
+                <p data-key="proj1_desc">Sistema portfólio interativo com tema retrowave — HTML, CSS, JavaScript, Vite.</p>
+                <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vite</span></div>
+              </div>
+              <i class="bi bi-arrow-up-right proj-arrow"></i>
+            </a>
+            <a href="https://github.com/MagdielPaulo/IMC" target="_blank" rel="noopener" class="project-row" data-anim="up">
+              <span class="proj-num">02</span>
+              <div class="proj-body">
+                <h3 data-key="proj2_name">Calculadora de IMC</h3>
+                <p data-key="proj2_desc">Calculadora interativa de Índice de Massa Corporal com classificação automática.</p>
+                <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              </div>
+              <i class="bi bi-arrow-up-right proj-arrow"></i>
+            </a>
+            <a href="https://github.com/MagdielPaulo/website-ex" target="_blank" rel="noopener" class="project-row" data-anim="up">
+              <span class="proj-num">03</span>
+              <div class="proj-body">
+                <h3 data-key="proj3_name">Site de Viagens</h3>
+                <p data-key="proj3_desc">Landing page de agência de viagens para prática de layout responsivo e front-end.</p>
+                <div class="proj-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              </div>
+              <i class="bi bi-arrow-up-right proj-arrow"></i>
+            </a>
+          </div>
         </div>
+      </section>
+
+   
+      <section id="experiencia" class="section section-alt">
+        <div class="container">
+          <span class="section-tag" data-key="exp_tag">04 // Experiência</span>
+          <h2 class="section-heading" data-key="exp_heading">Trajetória <span class="accent">profissional</span>.</h2>
+          <div class="timeline">
+            <div class="timeline-item" data-anim="up">
+              <div class="tl-marker"><div class="tl-dot"></div></div>
+              <div class="tl-content">
+                <span class="tl-period" data-key="exp1_period">1 ano e 4 meses</span>
+                <h3 data-key="exp1_title">Professor Técnico em Informática</h3>
+                <span class="tl-company">SEDUC/AL — PRONATEC</span>
+                <p data-key="exp1_desc">Ensino de lógica de programação, algoritmos e fundamentos de desenvolvimento de software. Orientação de projetos de conclusão de curso e organização de feiras de tecnologia.</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-anim="up">
+              <div class="tl-marker"><div class="tl-dot"></div></div>
+              <div class="tl-content">
+                <span class="tl-period" data-key="exp2_period">6 meses</span>
+                <h3 data-key="exp2_title">Instrutor de Informática</h3>
+                <span class="tl-company">Grau Profissionalizante</span>
+                <p data-key="exp2_desc">Ensino de informática aplicada, sistemas operacionais e ferramentas de produtividade. Desenvolvimento de exercícios práticos e atualização de materiais didáticos.</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-anim="up">
+              <div class="tl-marker"><div class="tl-dot"></div></div>
+              <div class="tl-content">
+                <span class="tl-period" data-key="exp3_period">2 anos</span>
+                <h3 data-key="exp3_title">Técnico de Suporte de TI</h3>
+                <span class="tl-company">SEDUC/AL</span>
+                <p data-key="exp3_desc">Suporte técnico em ambientes corporativos e educacionais, manutenção de hardware, configuração de redes e administração de infraestrutura tecnológica.</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-anim="up">
+              <div class="tl-marker"><div class="tl-dot"></div></div>
+              <div class="tl-content">
+                <span class="tl-period" data-key="exp4_period">2 anos</span>
+                <h3 data-key="exp4_title">Assistente Administrativo — TI</h3>
+                <span class="tl-company">Central Açucareira Santo Antônio S.A.</span>
+                <p data-key="exp4_desc">Desenvolvimento de soluções internas com HTML, CSS e JavaScript. Automação de processos administrativos, integração de dados entre setores e elaboração de documentação técnica.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="formacao" class="section">
+        <div class="container">
+          <span class="section-tag" data-key="edu_tag">05 // Formação</span>
+          <h2 class="section-heading" data-key="edu_heading">Formação <span class="accent">acadêmica</span>.</h2>
+          <div class="edu-list">
+            <div class="edu-card" data-anim="up">
+              <div class="edu-icon"><i class="bi bi-mortarboard-fill"></i></div>
+              <div class="edu-body">
+                <span class="edu-period" data-key="edu1_period">2019 — 2023</span>
+                <h3 data-key="edu1_title">Bacharelado em Ciência da Computação</h3>
+                <p data-key="edu1_inst">Centro Universitário de Maceió — UNIMA | AFYA</p>
+              </div>
+            </div>
+            <div class="edu-card" data-anim="up">
+              <div class="edu-icon"><i class="bi bi-award-fill"></i></div>
+              <div class="edu-body">
+                <span class="edu-period" data-key="edu2_period">Jan/2026 — Abr/2026</span>
+                <h3 data-key="edu2_title">Especialização em Desenvolvimento Full Stack</h3>
+                <p data-key="edu2_inst">Centro Universitário União das Américas Descomplica</p>
+                <span class="badge-progress" data-key="edu2_status"><i class="bi bi-hourglass-split"></i> Em andamento</span>
+              </div>
+            </div>
+            <div class="edu-card" data-anim="up">
+              <div class="edu-icon"><i class="bi bi-cloud-arrow-up-fill"></i></div>
+              <div class="edu-body">
+                <span class="edu-period" data-key="cert_label">Certificação</span>
+                <h3 data-key="cert_title">AWS Cloud Practitioner</h3>
+                <p data-key="cert_inst">Escola da Nuvem — Programa de Capacitação em Nuvem</p>
+                <span class="badge-progress" data-key="cert_status"><i class="bi bi-hourglass-split"></i> Em preparação</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="contato" class="section section-contact">
+        <div class="container">
+          <span class="section-tag" data-key="contact_tag">06 // Contato</span>
+          <h2 class="contact-heading" data-key="contact_heading">Vamos <span class="accent">trabalhar</span> juntos?</h2>
+          <p class="contact-sub" data-key="contact_sub">Aberto a novas oportunidades, freelance e projetos interessantes.</p>
+          <div class="contact-grid">
+            <a href="mailto:magdielpaulodev@gmail.com" class="contact-card" data-anim="up">
+              <i class="bi bi-envelope-fill"></i><span>magdielpaulodev@gmail.com</span>
+            </a>
+            <a href="https://github.com/MagdielPaulo" target="_blank" rel="noopener" class="contact-card" data-anim="up">
+              <i class="bi bi-github"></i><span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/magdiel-paulo/" target="_blank" rel="noopener" class="contact-card" data-anim="up">
+              <i class="bi bi-linkedin"></i><span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container footer-row">
+        <span>&copy; 2026 Magdiel Paulo</span>
       </div>
-    </section>
-  </main>
+    </footer>
+
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>

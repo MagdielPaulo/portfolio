@@ -1,4 +1,5 @@
 
+
 const i18n = {
   pt: {
     nav_about: "Sobre",
@@ -35,8 +36,6 @@ const i18n = {
     proj2_desc: "Calculadora interativa de Índice de Massa Corporal com classificação automática.",
     proj3_name: "Site de Viagens",
     proj3_desc: "Landing page de agência de viagens para prática de layout responsivo e front-end.",
-    proj4_name: "Chronos Timer",
-    proj4_desc: "Sistema Pomodoro completo com gestão de tarefas, estatísticas de produtividade e personalização de temas.",
     exp_tag: "04 // Experiência",
     exp_heading: 'Trajetória <span class="accent">profissional</span>.',
     exp1_period: "1 ano e 4 meses",
@@ -104,8 +103,6 @@ const i18n = {
     proj2_desc: "Interactive Body Mass Index calculator with automatic classification.",
     proj3_name: "Travel Website",
     proj3_desc: "Travel agency landing page for responsive layout and front-end practice.",
-    proj4_name: "Chronos Timer",
-    proj4_desc: "Full Pomodoro system with task management, productivity stats and theme customization.",
     exp_tag: "04 // Experience",
     exp_heading: 'Professional <span class="accent">journey</span>.',
     exp1_period: "1 year 4 months",
@@ -213,16 +210,9 @@ function initMobile() {
 function initReveal() {
   const els = document.querySelectorAll('[data-anim="up"]');
   if (!els.length) return;
-
-  
-  if (!("IntersectionObserver" in window)) {
-    els.forEach((el) => el.classList.add("visible"));
-    return;
-  }
-
   const obs = new IntersectionObserver((entries) => {
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); obs.unobserve(e.target); } });
-  }, { threshold: 0.05, rootMargin: "0px 0px -10px 0px" });
+  }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
   els.forEach((el, i) => { el.style.transitionDelay = `${i * 0.06}s`; obs.observe(el); });
 }
 
@@ -250,9 +240,6 @@ function initActiveNav() {
 }
 
 function init() {
-  
-  document.documentElement.classList.add("js-ready");
-
   setTheme(theme);
   setLang(lang);
   initCursor();
