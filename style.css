@@ -1,7 +1,4 @@
-/* =============================================
-   MAGDIEL PAULO — PORTFOLIO v2
-   Poppins + DM Mono | Devicon Skills | Fixed TL
-   ============================================= */
+
 
 :root {
   --bg:          #09090b;
@@ -32,7 +29,7 @@ body.light {
   --border-h:    rgba(0,0,0,.12);
 }
 
-/* Reset */
+
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{
@@ -43,7 +40,6 @@ body{
 }
 a{color:inherit;text-decoration:none}
 
-/* Cursor */
 .cursor-glow{
   position:fixed;width:550px;height:550px;border-radius:50%;
   pointer-events:none;z-index:0;
@@ -53,10 +49,10 @@ a{color:inherit;text-decoration:none}
 body:hover .cursor-glow{opacity:1}
 @media(max-width:768px){.cursor-glow{display:none}}
 
-/* Container */
+
 .container{max-width:1100px;margin:0 auto;padding:0 clamp(20px,5vw,80px)}
 
-/* ===== HEADER ===== */
+
 header{
   position:fixed;top:0;left:0;width:100%;z-index:200;
   height:68px;padding:0 clamp(20px,5vw,80px);
@@ -194,7 +190,7 @@ body.light .btn-primary{color:#fff}
   background:var(--accent-soft);transform:translateY(-2px);
 }
 
-/* Hero visual: code window */
+
 .hero-visual{
   position:relative;
   opacity:0;transform:translateY(30px);
@@ -237,7 +233,7 @@ body.light .c-blue{color:#2563eb}
 body.light .c-green{color:#16a34a}
 body.light .c-orange{color:#ea580c}
 
-/* Floating tech bubbles */
+
 .float-bubble{
   position:absolute;width:48px;height:48px;border-radius:14px;
   background:var(--bg-card);border:1px solid var(--border-h);
@@ -254,7 +250,7 @@ body.light .float-bubble{box-shadow:0 6px 20px rgba(0,0,0,.06)}
 
 @keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 
-/* Scroll cue */
+
 .scroll-cue{
   position:absolute;bottom:36px;left:clamp(20px,5vw,80px);
   display:flex;align-items:center;gap:10px;
@@ -269,7 +265,7 @@ body.light .float-bubble{box-shadow:0 6px 20px rgba(0,0,0,.06)}
   animation:scrollPulse 2s cubic-bezier(.65,0,.35,1) infinite;
 }
 
-/* ===== SECTIONS ===== */
+
 .section{padding:100px 0;position:relative}
 .section-alt{background:var(--bg-alt)}
 .section-tag{
@@ -281,7 +277,7 @@ body.light .float-bubble{box-shadow:0 6px 20px rgba(0,0,0,.06)}
   line-height:1.2;letter-spacing:-.02em;margin-bottom:44px;max-width:600px;
 }
 
-/* ===== ABOUT ===== */
+
 .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:start}
 .about-text p{color:var(--text-dim);margin-bottom:16px;line-height:1.8}
 .about-text p:last-child{margin-bottom:0}
@@ -292,7 +288,7 @@ body.light .float-bubble{box-shadow:0 6px 20px rgba(0,0,0,.06)}
 .status-on{color:var(--accent);display:flex;align-items:center;gap:6px}
 .status-on i{font-size:.5rem;animation:pulse 2s infinite}
 
-/* ===== SKILLS ===== */
+
 .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .skill-card{
   background:var(--bg-card);border:1px solid var(--border);
@@ -313,7 +309,7 @@ body.light .devicon-express-original,
 body.light .devicon-linux-plain,
 body.light .devicon-github-original{color:var(--text)}
 
-/* ===== PROJECTS ===== */
+
 .projects-list{display:flex;flex-direction:column;gap:2px}
 .project-row{
   display:grid;grid-template-columns:48px 1fr 32px;
@@ -333,7 +329,7 @@ body.light .devicon-github-original{color:var(--text)}
 }
 .proj-arrow{font-size:1.2rem;color:var(--text-dim);transition:all .3s var(--ease)}
 
-/* ===== EXPERIENCE — fixed timeline ===== */
+
 .timeline{
   display:flex;flex-direction:column;gap:0;
   position:relative;padding-left:28px;
@@ -374,7 +370,7 @@ body.light .tl-dot{border-color:var(--bg)}
 }
 .tl-content p{font-size:.88rem;color:var(--text-dim);line-height:1.7}
 
-/* ===== EDUCATION ===== */
+
 .edu-list{display:flex;flex-direction:column;gap:16px}
 .edu-card{
   display:flex;gap:20px;align-items:flex-start;
@@ -399,7 +395,7 @@ body.light .tl-dot{border-color:var(--bg)}
   background:var(--accent-soft);color:var(--accent);
 }
 
-/* ===== CONTACT ===== */
+
 .section-contact{padding:140px 0;text-align:center}
 .section-contact .section-tag{text-align:center}
 .contact-heading{
@@ -420,7 +416,7 @@ body.light .tl-dot{border-color:var(--bg)}
   background:var(--accent-soft);transform:translateY(-2px);
 }
 
-/* Footer */
+
 footer{border-top:1px solid var(--border);padding:22px 0}
 .footer-row{
   display:flex;justify-content:space-between;align-items:center;
@@ -428,7 +424,7 @@ footer{border-top:1px solid var(--border);padding:22px 0}
 }
 .footer-row i{color:var(--accent);font-size:.65rem}
 
-/* ===== ANIMATIONS ===== */
+
 @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 @keyframes revealUp{to{opacity:1;transform:translateY(0)}}
 @keyframes scrollPulse{0%{top:-40%}100%{top:100%}}
@@ -448,7 +444,7 @@ body::after{
 }
 body.light::after{opacity:.028}
 
-/* ===== RESPONSIVE ===== */
+
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr;gap:40px}
   .hero-visual{max-width:420px}
