@@ -8,11 +8,11 @@ Portfólio pessoal moderno e minimalista, desenvolvido para apresentar minha tra
 
 ## 📸 Preview
 
-| Dark Mode | Light Mode |
-|-----------|------------|
-| ![Dark](https://smoggy-indigo-452eptcvnd.edgeone.app/image.png) | ![Light](https://radical-harlequin-0ox5upky5h.edgeone.app/image2.png) |
 
-> *Substitua as imagens acima por screenshots reais do projeto.*
+| Tema Escuro (Dark) | Tema Claro (Light) |
+| :---: | :---: |
+| ![Dark](https://github.com/user-attachments/assets/a99fabef-d8d6-44bc-a5ad-3c27914e90f7) | ![Light](https://github.com/user-attachments/assets/c63a4fd3-962d-4540-887f-def05ce5da89) |
+
 
 ---
 
