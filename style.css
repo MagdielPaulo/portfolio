@@ -70,7 +70,7 @@ header.scrolled{
 
 #nav-desktop{display:flex;gap:28px}
 .nav-link{
-  font-family:var(--mono);font-size:.78rem;color:var(--text-dim);
+  font-family:var(--mono);font-size:.88rem;color:var(--text-dim);
   letter-spacing:.04em;transition:color .3s;position:relative;
 }
 .nav-link::after{
@@ -417,7 +417,7 @@ body.light .tl-dot{border-color:var(--bg)}
 }
 
 
-footer{border-top:1px solid var(--border);padding:22px 0}
+footer{border-top:1px solid var(--border);padding:22px 0;text-align:center}
 .footer-row{
   display:flex;justify-content:space-between;align-items:center;
   font-size:.75rem;color:var(--text-dim);
